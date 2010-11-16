@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<Map Name="Project.Lovecraft">
+<Room Name="Start">
+  <Character Name="You">
+    <Command Verb="Go" />
+    <Command Verb="Quit" />
+    <Command Verb="Take" />
+    <Command Verb="Drop" />
+    <Command Verb="Look" />
+    <Command Verb="Help" />
+  </Character>
+  <Description>This is room $A1.  You can feel a blood pool it is too dark to  see.</Description>
+  <Description Status="lit">This is room $A1.  You can see the outline of your head in a blood pool on the ground. There are strange sigils on the ground surrounding you.</Description>
+  <Description Status="Look">Upon further inspection the blood appears to be the wrong color and texture for a human</Description>
+  <Description Status="Help">Have you grabbed the torch yet? (Type "take torch")</Description>
+  <Exit Name="East" Destination="A2"> 
+    <Description Status="Lit">There is a stone archway leading east</Description>
+  </Exit>
+  <Exit Name="South" Destination="B1">
+    <Description Status="Lit">The courtyard opens to the South</Description>
+  </Exit>
+  <Item Name="Torch" Status="Light"> 
+    <Description Status="Lit">There is a burning torch</Description>
+    <Description Status="Look">The fire of the torch burns slightly greenish in color.</Description>
+    <Command Verb="Take @Me"/>
+    <Command Verb="Drop @Me"/>
+    <Command Verb="Look at @Me"/>
+    <Command Verb="Attack"/>
+    <Command Verb="Attack @Monster"/>
+  </Item>
+  <Command Verb="Go @Exit" /><Command Verb="@Exit"></Command>
+</Room>
+<Room Name="A1">
+  <Exit Name="West" Destination="$A1"/>
+  <Exit Name="East" Destination="$A3"/>
+  <Exit Name="South" Destination="$B2"/>
+  <Description>This is room $A2.  It is too dark to See.</Description>
+  <Description Status="Lit">This is room $A2.  It is Garishly colored.</Description>
+  <Monster Name="Shoggoth">
+    <Description>You hear a buggling sound as something squishes across the unlit room</Description>
+    <Description Status="Lit">There is a bubbling mass of tissue with hundred of eyes and tentacles shambling through the room.  It seems to notice you</Description> 
+    <Description Status="Dead">The bubbling mass of tissue lays slumpt on the ground with the tentacles limp and the eyes devoid of life.</Description>
+    <Description Status="Dead,Dark">The smell of something foul and unholy fills this area.</Description>
+    <Description Status="Attacking">The thing lumbers towards you and you are engulfed in the tissue.  A crushing feeling passes quickly as you know no more.</Description>
+  </Monster>
+  <Item Name="Torch" Status="Light"> 
+    <Description Status="Lit">There is a burning torch</Description>
+    <Description Status="Look">The fire of the torch burns slightly greenish in color.</Description>
+    <Command Verb="Take @Me"/>
+    <Command Verb="Drop @Me"/>
+    <Command Verb="Look at @Me"/>
+    <Command Verb="Attack"/>
+    <Command Verb="Attack @Monster"/>
+  </Item>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A2">
+  <Exit Name="West" Destination="$A2"/>
+  <Exit Name="East" Destination="$A4"/>
+  <Exit Name="South" Destination="$B3"/>
+  <Description>This is room $A3.  There are lots of smelly goblins</Description>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A3">
+  <Exit Name="West" Destination="$A3"/>
+  <Exit Name="South" Destination="$B4"/>
+  <Item Name="Bag">
+    <Command Verb="Put @Item In @Me"/>
+    <Command Verb="Take @Item From @Me"/>
+  </Item>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A4">
+  <Exit Name="North" Destination="$A1"/>
+  <Exit Name="East" Destination="$B2"/>
+  <Exit Name="South" Destination="$C1"/>
+  <Description>This is room $B1, The room is too dark to see.</Description>
+  <Description Status="Lit">This chamber has nothing of interest.</Description>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="B1">
+  <Exit Name="North" Destination="$A2"/>
+  <Exit Name="West" Destination="$B1"/>
+  <Exit Name="East" Destination="$B3"/>
+  <Exit Name="South" Destination="$C2"/>
+  <Description>This is room $B2.  It is too dark to see.</Description>
+  <Description Status="Lit">This is room $B2.  Stange sigils cover the walls</Description>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="B2">
+  <Exit Name="North" Destination="$A3"/>
+  <Exit Name="West" Destination="$B2"/>
+  <Exit Name="East" Destination="$B4"/>
+  <Exit Name="South" Destination="$C3"/>
+  <Description>This is room $B3.  OMG WHY GOD WHY!!!</Description>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="B3">
+  <Exit Name="North" Destination="$A4"/>
+  <Exit Name="West" Destination="$B3"/>
+  <Exit Name="South" Destination="$C4"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="B4">
+  <Exit Name="North" Destination="$B1"/>
+  <Exit Name="East" Destination="$C2"/>
+  <Exit Name="South" Destination="$D1"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="C1">
+  <Exit Name="North" Destination="$B2"/>
+  <Exit Name="West" Destination="$C1"/>
+  <Exit Name="East" Destination="$C3"/>
+  <Exit Name="South" Destination="$Lost"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="C2">
+  <Exit Name="North" Destination="$B3"/>
+  <Exit Name="West" Destination="$C2"/>
+  <Exit Name="East" Destination="$C4"/>
+  <Exit Name="South" Destination="$Lost"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="C3">
+  <Exit Name="North" Destination="$B4"/>
+  <Exit Name="West" Destination="$C3"/>
+  <Exit Name="South" Destination="$D4"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="C4">
+  <Exit Name="North" Destination="$C1"/>
+  <Exit Name="South" Destination="$E1"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="D1">
+  <Exit Name="North" Destination="$D1"/>
+  <Exit Name="South" Destination="$F1"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="D4">
+  <Description></Description>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="E1">
+  <Exit Name="North" Destination="$C4"/>
+  <Exit Name="South" Destination="$E4"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="E4">
+  <Exit Name="North" Destination="$D4"></Exit>
+  <Exit Name="East" Destination="$E5"/>
+  <Exit Name="South" Destination="$F4"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+
+<Room Name="F1">
+  <Exit Name="North" Destination="$E1"/>
+  <Exit Name="East" Destination="$F2"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="F2">
+  <Exit Name="North" Destination="$Lost"/>
+  <Exit Name="East" Destination="$F1"/>
+  <Exit Name="West" Destination="$F3"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"></Command>
+</Room>
+<Room Name="F3">
+  <Exit Name="North" Destination="$Lost"/>
+  <Exit Name="East" Destination="$F2"/>
+  <Exit Name="West" Destination="$F4"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="F4">
+  <Exit Name="North" Destination="$E4"/>
+  <Exit Name="West" Destination="$F3"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+
+<Room Name="E7">
+  <Exit Name="North" Destination="$D7"/>
+  <Exit Name="West" Destination="$E6"/>
+  <Exit Name="South" Destination="$F7"/>
+  <Exit Name="East" Destination="$E8"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+
+
+<Room Name="A5">
+  <Exit Name="East" Destination="$A6"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A6">
+  <Exit Name="West" Destination="$A5"/>
+  <Exit Name="East" Destination="$A7"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A7">
+  <Exit Name="West" Destination="$A6"/>
+  <Exit Name="East" Destination="$A8"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A8">
+  <Exit Name="West" Destination="$A7"/>
+  <Exit Name="East" Destination="$A9"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A9">
+  <Exit Name="West" Destination="$A8"/>
+  <Exit Name="East" Destination="$A10"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="A10">
+  <Exit Name="West" Destination="$A9"/>
+  <Exit Name="South" Destination="$B10"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="B10">
+  <Exit Name="North" Destination="$A10"/>
+  <Exit Name="South" Destination="$C10"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="C10">
+  <Exit Name="North" Destination="$B10"/>
+  <Exit Name="South" Destination="$D10"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="D10">
+  <Exit Name="West" Destination="$D9"/>
+  <Exit Name="North" Destination="$C10"/>
+  <Exit Name="East" Destination="$D11"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="D9">
+  <Exit Name="West" Destination="$D10"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="E8">
+  <Exit Name="West" Destination="$D10"/>
+  <Exit Name="East" Destination="$D8"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="Chasm">
+  <Exit Name="West" Destination="$D9"/>
+  <Exit Name="South" Destination="$E8"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="E8">
+  <Exit Name="North" Destination="$D8"/>
+  <Exit Name="West" Destination="$E7"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="E7">
+  <Exit Name="West" Destination="$E6"/>
+  <Exit Name="East" Destination="$E8"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="E6">
+  <Exit Name="North" Destination="$D6"/>
+  <Exit Name="West" Destination="$E5"/>
+  <Exit Name="South" Destination="$F6"/>
+  <Exit Name="East" Destination="$E7"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="E5">
+  <Exit Name="West" Destination="$E4"/>
+  <Exit Name="East" Destination="$E6"/>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+</Map>
