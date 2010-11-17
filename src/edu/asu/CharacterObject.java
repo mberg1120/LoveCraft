@@ -30,20 +30,50 @@ public class CharacterObject extends CreatureObject {
 	 * @author Michael Berg
 	 */
 	@Override
-	public String doVerb(GameObject subject, String input){
+	public String doVerb(GameObject subject, String input)
+	{
 		GameCommand verb;
-		if(equipped() != null)
+		int x = 0;
+		String _Cut[] = input.split(" ");
+		if(_Cut.length < 2)
 		{
-			verb = equipped().getVerb(input);
+			verb = this.getVerb(input);
+			if(verb != null)
+				return Client.doVerb(subject, this, verb.getTranslation(input));
+			else
+				return "I don't understand \"" + input + "\".";
+		}
+		if(CharacterObject.you.inventory().size() > 0)
+		{
+			verb = null;
+			for(int i = 0; i < CharacterObject.you.inventory().size(); i++)
+				if(CharacterObject.you.inventory().get(i).name().equalsIgnoreCase(_Cut[1]))
+				{
+					x = i;
+					verb = CharacterObject.you.inventory().get(i).getVerb(input);
+				}
 			if(verb != null){
-				return equipped().doVerb(this, input);
+				return CharacterObject.you.inventory().get(x).doVerb(this, input);
 			}
 		}
 		verb = _location.getVerb(input);
 		if(verb != null){
 			return _location.doVerb(this, input);//return Client.doVerb(equipped(), this, verb.getTranslation(input));
 		}
-		ItemObject item;
+		ItemObject item = null;
+//		String[] _Input = input.split(" ");
+//		if(_Input[0].equalsIgnoreCase("Equip"))
+//		{
+//			for(int i = 0; i < CharacterObject.you.inventory().size(); i++)
+//			{
+//				verb = CharacterObject.you.getVerb(input);
+//				if(CharacterObject.you.inventory().get(i).getVerb("Equip") != null)
+//					item = (ItemObject) CharacterObject.you.inventory().get(i);
+//				if(verb != null)
+//					 return item.doVerb(this, input);
+//			}
+////				return null;
+//		}
 		for(Iterator<ItemObject> i 	= _location.items().iterator(); i.hasNext(); ){
 			 item = i.next();
 			 verb = item.getVerb(input);
@@ -87,7 +117,8 @@ public class CharacterObject extends CreatureObject {
 	 * @return boolean
 	 */
 	@Override
-	public boolean isLight(){
+	public boolean isLight()
+	{
 		if(equipped() != null)
 			return equipped().isLight();
 		return false;

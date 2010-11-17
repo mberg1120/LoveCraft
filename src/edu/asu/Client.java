@@ -31,7 +31,9 @@ public class Client {
 	 */
 	static int x = 0, y = 0; //For the map
 	static ArrayList roomList = new ArrayList();
-	public static void main(String[] args) {
+	private static Crawler mapCrawler;
+	public static void main(String[] args) 
+	{
 		String input;
 		//step 1: Load XML file
 		Element gameFile = parseXMLFile("Project Lovecraft.xml");
@@ -57,8 +59,9 @@ public class Client {
 		Date now = new Date();
 		GameObject room = null;
 		logged.println("==========| " + now.toString() + " |==========");
+		mapCrawler = new Crawler(roomList);
+		mapCrawler.findDimensions();
 		do {
-
 			if(CharacterObject.you.location().equals(room)) {
 				CreatureObject monster;
 				for(Iterator<CreatureObject> i 	= room.creatures().iterator(); i.hasNext(); ){
@@ -68,8 +71,8 @@ public class Client {
 			}
 			else {
 			room = CharacterObject.you.location();
-			room.beenInRoom = true;
 			room.currentRoom = true;
+			mapCrawler.userBeenRoom(x, y);
 				if(room.isFirst == true)
 					System.out.println(room.description(null));
 				else
@@ -217,31 +220,22 @@ public class Client {
 					System.out.println("You can't go that way.");
 				else
 				{
+					mapCrawler.max[x][y] = 2;
 					CreatureObject you = (CreatureObject)gSubject;
 					you.setLocation(exit.destination());
 					String response = "You go " + userInput[1] + ".\n";
-//					if(CharacterObject.you._location.isFirst == true)
-//						mapList.add(you);
-//					if(userInput[1].equalsIgnoreCase("North"))
-//					{
-//						x--;
-//						Map.setX(mapList, x, y);
-//					}
-//					else if(userInput[1].equalsIgnoreCase("South"))
-//					{
-//						x++;
-//						Map.setX(mapList, x, y);
-//					}
-//					else if(userInput[1].equalsIgnoreCase("East"))
-//					{
-//						y++;
-//						Map.setY(mapList, y, x);
-//			    	}
-//					else if(userInput[1].equalsIgnoreCase("West"))
-//					{
-//						y--;
-//						Map.setY(mapList, y, x);
-//					}
+					room.beenInRoom = true;
+					room.currentRoom = true;
+					if(userInput[1].equalsIgnoreCase("North"))
+						y--;
+					else if(userInput[1].equalsIgnoreCase("South"))
+						y++;
+					else if(userInput[1].equalsIgnoreCase("East"))
+						x++;
+					else if(userInput[1].equalsIgnoreCase("West"))
+						x--;
+					mapCrawler.currentRoom(room);
+					mapCrawler.userBeenRoom(x, y);
 					System.out.print(response);
 				}
 			}		
@@ -249,7 +243,7 @@ public class Client {
 		}
 		else if(userInput[0].equalsIgnoreCase("Map") || userInput[0].equalsIgnoreCase("M"))
 		{
-			Map.setMap(roomList);
+			mapCrawler.callMe();
 		}
 		else if(userInput[0].equalsIgnoreCase("Look")){ // "Look ...", a series of commands (see below)			
 			if(gSubject instanceof CharacterObject)
@@ -307,6 +301,7 @@ public class Client {
 				else if(target instanceof ItemObject) 
 				{
 					CharacterObject.you._location.removeFromInventory((ItemObject)target);
+					CharacterObject.you.addToInventory((ItemObject)target);
 				}
 				else
 					return "You can't take that.";
@@ -346,6 +341,9 @@ public class Client {
 					gActor.equip(null);
 				}
 				target.setLocation(gActor.location());
+
+				CharacterObject.you._location.addToInventory(target);
+				CharacterObject.you.removeFromInventory(target);
 				System.out.println("You put down the " + target.name());
 			}
 		}

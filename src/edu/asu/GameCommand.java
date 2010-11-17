@@ -32,8 +32,10 @@ public class GameCommand {
 	 */
 	public boolean matches(String input){
 		String[] _parsedInput = input.split(" ");
-		if(_parsedInput.length == _parsedVerb.length) {
-			for(int i=0; i < _parsedInput.length; i++) {
+		if(_parsedInput.length == _parsedVerb.length) 
+		{
+			for(int i=0; i < _parsedInput.length; i++)
+			{
 				if(_parsedVerb[i].startsWith("@")) {
 					if(_parsedVerb[i].equalsIgnoreCase("@ME") && !_parsedInput[i].equalsIgnoreCase(_name)) {
 						return false;
