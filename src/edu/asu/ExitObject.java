@@ -13,7 +13,7 @@ public class ExitObject extends GameObject {
 	public boolean initialize(){
 		if(super.initialize()){
 			_destination = Client.getXMLElement(_XMLBlock, "Destination");
-			System.out.print("connecting to " + _destination + "; ");
+//			System.out.print("connecting to " + _destination + "; ");
 			return true;
 		}
 		return false;

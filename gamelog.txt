@@ -1494,3 +1494,2016 @@ go south
 go south
 go south
 m
+==========| Wed Nov 17 12:00:24 MST 2010 |==========
+map
+go south
+m
+go south
+
+m
+go north
+go north
+m
+go south
+go south
+go south
+go south
+go south
+m
+==========| Wed Nov 17 12:01:17 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+m
+==========| Wed Nov 17 12:01:58 MST 2010 |==========
+m
+go south
+go south
+go south
+go south
+go south
+go south
+m
+==========| Wed Nov 17 12:03:39 MST 2010 |==========
+==========| Wed Nov 17 12:03:56 MST 2010 |==========
+m
+==========| Wed Nov 17 12:05:08 MST 2010 |==========
+m
+go south
+go south
+go south
+go south
+go south
+m
+go east
+go east
+go east
+go north
+go east
+go east
+go east 
+go east
+go east
+go north
+go east
+go east
+m
+go north
+go north
+go north
+go north
+m
+go west
+go west
+go west
+go west
+go west
+m
+q
+quit
+==========| Thu Nov 18 10:19:19 MST 2010 |==========
+equip torch
+take key
+equip key
+take torch
+equip torch
+==========| Thu Nov 18 10:21:16 MST 2010 |==========
+take torch
+equip torch
+i
+go east
+attack
+==========| Thu Nov 18 10:21:51 MST 2010 |==========
+i
+take torch
+==========| Thu Nov 18 10:22:59 MST 2010 |==========
+take torch
+i
+m
+
+equip torch
+go east
+attack shoggoth
+==========| Thu Nov 18 10:23:55 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+look
+help
+go east
+go west
+go west
+go east
+==========| Thu Nov 18 10:28:01 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torch
+light torch
+look
+==========| Thu Nov 18 10:52:11 MST 2010 |==========
+take torch
+equip torch
+g east
+go east
+attack
+look
+==========| Thu Nov 18 10:54:05 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+look
+go west
+look east
+drop torch
+go east
+==========| Thu Nov 18 11:09:11 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+look
+==========| Thu Nov 18 11:09:43 MST 2010 |==========
+take torch
+go east
+go west
+equip torch
+go east
+attack
+look
+==========| Thu Nov 18 11:10:19 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+look
+==========| Thu Nov 18 11:15:35 MST 2010 |==========
+==========| Thu Nov 18 11:15:53 MST 2010 |==========
+take torch
+equip torch
+go east
+==========| Thu Nov 18 11:17:31 MST 2010 |==========
+take torch
+equip torch
+m
+go south
+m
+go east
+m
+go east
+go east
+go south
+go south
+go south
+m
+go west
+go south
+go east
+m
+go north
+go east
+go east
+go east
+go east
+go north
+m
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+m
+==========| Thu Nov 18 11:19:40 MST 2010 |==========
+take torch
+equip torch
+go east
+attack 
+look
+go west
+go east
+look
+==========| Thu Nov 18 11:23:03 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+go east
+look
+go west
+drop torch
+go east
+go west
+take torch
+go south
+go north
+equip toch
+equip torch
+i
+drop torch
+go south
+go north
+take torch
+==========| Thu Nov 18 11:25:22 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+look
+==========| Thu Nov 18 11:33:56 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+look
+go east
+go west
+go east
+go west
+==========| Thu Nov 18 11:34:57 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+take key
+go east
+take torch
+i
+go west
+go east
+take torch
+==========| Thu Nov 18 11:35:53 MST 2010 |==========
+take torch
+go south
+take torch
+go north
+equip torch
+go east
+attack
+take torch
+look
+go east
+drop torch
+go west
+go east
+take torch
+take torch
+i
+look
+equip torch
+drop torch
+look
+i
+equip torch
+drop torch
+look
+i
+==========| Thu Nov 18 11:41:11 MST 2010 |==========
+take torch
+equip torch
+drop torch
+look
+==========| Thu Nov 18 11:43:44 MST 2010 |==========
+take torch
+equip torch
+drop torch
+look
+take torch
+equip torch
+drop key
+==========| Thu Nov 18 11:44:40 MST 2010 |==========
+take torch
+drop key
+==========| Thu Nov 18 11:44:47 MST 2010 |==========
+take key
+drop key
+==========| Thu Nov 18 11:46:01 MST 2010 |==========
+drop key
+take torch
+drop key
+drop torchh
+drop torch
+look
+take torch
+take key
+look
+hell to the yes.
+==========| Thu Nov 18 12:17:16 MST 2010 |==========
+take torch
+m
+go south
+m
+go south
+m
+go south
+m
+go south
+m
+go south
+m
+go east
+m
+go east
+m
+go east
+go east
+go nonrth
+go north
+go east
+go east
+go east
+go east
+go north
+m
+go east
+go north
+go east
+m
+go north
+m
+go north
+m
+go north
+m
+map
+go south
+go south
+m
+go south
+m
+go west
+m
+go west
+m
+==========| Thu Nov 18 12:30:00 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+drop
+drop torch
+go east
+==========| Thu Nov 18 12:33:39 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+drop
+drop torch
+go east
+go west
+take torch
+eqquip torch
+go east
+go west
+equip torch
+go east
+equip asdf
+equip
+==========| Thu Nov 18 12:37:55 MST 2010 |==========
+equip
+==========| Thu Nov 18 12:38:10 MST 2010 |==========
+equip
+take torch
+equip
+equip torch
+equip
+i
+equipped
+m
+go south
+go south
+go souuth
+go south
+go south
+go south
+go west
+go west
+go west
+go east
+go east
+go east
+go north
+m
+go east
+go east
+go east
+go east
+go north
+m
+go east
+go east
+go north
+go north
+m
+go south
+m
+go south
+m
+go west
+m
+go west
+m
+go south
+m
+go north
+m
+go south
+go east
+m
+go east 
+go east
+go east
+go west 
+go west   
+m
+go south
+go north
+
+m
+go south
+go south
+go east
+go south
+
+m
+go east
+go west
+go west
+m
+go est
+go east
+go east
+go east   
+m
+go west
+m
+go north
+go south
+go west
+==========| Thu Nov 18 13:41:03 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go east
+go east
+go south
+go south
+go south
+go south
+go west
+go west
+go east
+go east
+go southh
+go south
+go north
+go west
+go north
+go south
+go west
+go west
+og sout
+go south
+go south
+go west
+go west
+go west
+go north
+go north
+go east
+m
+go north
+go north
+go north
+go east
+attack
+i
+r
+==========| Thu Nov 18 14:13:02 MST 2010 |==========
+go south
+go south
+go north
+go north
+go east
+attack
+==========| Thu Nov 18 14:13:59 MST 2010 |==========
+go south
+go east
+go north
+attack
+==========| Thu Nov 18 14:15:59 MST 2010 |==========
+attack
+==========| Thu Nov 18 14:17:05 MST 2010 |==========
+attack
+attack torch
+take torch
+equip
+equip torch
+attack key
+attack torch
+go east
+take
+==========| Thu Nov 18 14:19:08 MST 2010 |==========
+go east
+attack
+==========| Thu Nov 18 14:19:33 MST 2010 |==========
+go east
+==========| Thu Nov 18 14:21:40 MST 2010 |==========
+go east
+attack
+==========| Thu Nov 18 14:23:47 MST 2010 |==========
+==========| Thu Nov 18 14:23:52 MST 2010 |==========
+go east
+look
+==========| Thu Nov 18 14:24:23 MST 2010 |==========
+go east
+lok
+==========| Thu Nov 18 14:24:57 MST 2010 |==========
+go east
+look
+==========| Thu Nov 18 14:32:01 MST 2010 |==========
+take keey
+take key
+go east
+attack
+==========| Thu Nov 18 14:33:01 MST 2010 |==========
+==========| Thu Nov 18 14:33:06 MST 2010 |==========
+take key
+go east
+attack
+==========| Thu Nov 18 14:33:18 MST 2010 |==========
+m
+m
+m
+m
+take key
+equip key
+q
+quit
+==========| Thu Nov 18 14:34:43 MST 2010 |==========
+take key
+equip key
+quit
+==========| Thu Nov 18 14:35:07 MST 2010 |==========
+take key
+equip key
+go east
+attack
+==========| Thu Nov 18 14:35:23 MST 2010 |==========
+take key
+equip key
+attack
+go east
+attack
+==========| Thu Nov 18 14:42:25 MST 2010 |==========
+go east
+attack
+==========| Thu Nov 18 14:42:55 MST 2010 |==========
+m
+
+go south
+m
+go north
+m
+m
+take torch
+go east
+attack
+==========| Thu Nov 18 14:58:10 MST 2010 |==========
+take key
+take torch
+equip torch
+equip key
+==========| Thu Nov 18 15:19:54 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+==========| Thu Nov 18 15:21:58 MST 2010 |==========
+take torch
+equip
+equip torch
+go  east
+attack
+go east
+attack
+==========| Thu Nov 18 15:25:28 MST 2010 |==========
+take key
+equip key
+go east
+attack
+==========| Thu Nov 18 15:25:44 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+==========| Thu Nov 18 15:26:31 MST 2010 |==========
+take torc
+take torch
+equip torch
+go east
+attack
+==========| Thu Nov 18 15:28:59 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+==========| Thu Nov 18 15:29:12 MST 2010 |==========
+take key
+equip key
+go east
+attack
+==========| Thu Nov 18 15:57:17 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torch
+==========| Thu Nov 18 15:58:20 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torch
+==========| Thu Nov 18 15:59:12 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torch
+==========| Thu Nov 18 15:59:57 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torch
+==========| Thu Nov 18 16:04:45 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torch
+light torchonwall
+light TorchOnWall
+==========| Thu Nov 18 16:05:25 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torchonwall
+==========| Thu Nov 18 16:06:09 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+go east
+take torch
+go west
+go east
+i
+light torch
+go west
+go east
+go west
+drop torch
+i
+drop torch
+go east
+==========| Thu Nov 18 16:10:10 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+go east
+light stick
+go west
+drop torch
+go east
+==========| Thu Nov 18 16:11:23 MST 2010 |==========
+take torch
+equip torch
+go east
+attack 
+go west
+drop torch
+go east
+go west
+take torch
+equip torch
+go east
+light stick
+go west
+drop torch
+go east
+==========| Thu Nov 18 16:12:40 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Thu Nov 18 16:13:20 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+go east
+light stick
+go west
+drop torch
+go east
+==========| Thu Nov 18 16:20:52 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Thu Nov 18 16:21:33 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+go west
+go east
+take stick
+==========| Thu Nov 18 16:22:47 MST 2010 |==========
+take torch
+equip ttorch
+equip torch
+go eastt
+go east
+attack
+light stick
+go west
+drop torc
+drop torch
+go east
+==========| Thu Nov 18 16:26:02 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+go east
+light stick
+go west
+drop torch
+go east
+==========| Thu Nov 18 16:26:30 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Thu Nov 18 16:28:48 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+take key
+equip key
+go east
+go west
+drop key
+go east
+go east
+equip key
+take key
+equip key
+go east
+go west
+go west
+go west
+take key
+go east
+equip key
+go west
+go east
+attack 
+==========| Thu Nov 18 16:31:55 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go east
+drop torch
+go west
+go west
+==========| Thu Nov 18 16:33:03 MST 2010 |==========
+take torch
+go south
+drop torch
+go north
+go south
+take torch
+==========| Tue Nov 23 10:14:16 MST 2010 |==========
+tAkE torch
+equip torch
+go east
+attack
+go west
+drop torch
+go east
+go west
+take torch
+go east
+light stick
+==========| Tue Nov 23 11:06:50 MST 2010 |==========
+take torch
+go east
+go west
+equip torch
+go east
+attack
+go west
+drop torch
+take torch
+go east
+light stick
+equip torch
+light stick
+go west
+drop torch
+go west
+go east
+go west
+==========| Tue Nov 23 11:07:56 MST 2010 |==========
+take torch
+equip torch
+go east
+attack 
+light stick
+go west
+==========| Tue Nov 23 11:11:24 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 11:14:07 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 11:15:34 MST 2010 |==========
+==========| Tue Nov 23 11:15:44 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 11:22:04 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop
+go east
+==========| Tue Nov 23 11:23:19 MST 2010 |==========
+tkae torch
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+look
+look stick
+look Stick
+look at stick
+==========| Tue Nov 23 11:26:15 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 11:27:33 MST 2010 |==========
+take torch
+go east
+go west
+equip torch
+go east
+attack
+light stick
+go east
+drop torch
+go west
+==========| Tue Nov 23 11:30:32 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light torch
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 12:42:26 MST 2010 |==========
+m
+go south
+m
+go north
+m
+go east
+m
+==========| Tue Nov 23 12:42:41 MST 2010 |==========
+m
+==========| Tue Nov 23 12:52:44 MST 2010 |==========
+==========| Tue Nov 23 12:54:27 MST 2010 |==========
+==========| Tue Nov 23 13:49:19 MST 2010 |==========
+==========| Tue Nov 23 13:49:37 MST 2010 |==========
+go east
+go west
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop
+drop torch
+go east
+==========| Tue Nov 23 13:55:02 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+go west
+drop torch
+go east
+go west
+take torch
+equip torch
+go east
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 13:56:22 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go west
+go east
+==========| Tue Nov 23 13:57:24 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 13:58:53 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 14:00:02 MST 2010 |==========
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+==========| Tue Nov 23 14:01:22 MST 2010 |==========
+take toorch
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 14:04:56 MST 2010 |==========
+go south
+go north
+==========| Tue Nov 23 14:08:16 MST 2010 |==========
+go south
+go north
+==========| Tue Nov 23 14:08:35 MST 2010 |==========
+go south
+go north
+take torch
+equip torch
+go east
+attack
+light stick
+go west
+drop torch
+go east
+go west
+go south
+==========| Tue Nov 23 14:18:21 MST 2010 |==========
+take torch
+equip torch
+go south
+go north
+go east
+attack
+light stick
+go west
+drop torch
+go east
+==========| Tue Nov 23 14:35:28 MST 2010 |==========
+==========| Mon Nov 29 20:17:10 MST 2010 |==========
+take torch
+go east
+attack
+==========| Mon Nov 29 20:23:18 MST 2010 |==========
+take torch
+go east
+attack
+==========| Mon Nov 29 20:25:13 MST 2010 |==========
+go north
+take torch
+attack
+attack life
+go south
+attack
+go south
+attack
+equip torch
+attack
+go north
+go north
+attack key
+==========| Mon Nov 29 20:35:47 MST 2010 |==========
+==========| Mon Nov 29 20:54:27 MST 2010 |==========
+m
+go south
+m
+go north
+m
+==========| Mon Nov 29 20:57:32 MST 2010 |==========
+m
+go south
+m
+m
+go north
+m
+==========| Mon Nov 29 21:00:23 MST 2010 |==========
+go south
+m
+==========| Mon Nov 29 21:01:28 MST 2010 |==========
+m
+go south
+m
+go south
+m
+ggo south
+go south
+go south
+go south
+m
+go north
+==========| Mon Nov 29 21:04:16 MST 2010 |==========
+go south
+go south
+go south
+go south
+go south
+go south
+m
+go east
+m
+go east
+go east
+go east
+go north
+m
+go north
+go west
+go north
+go west
+m
+go north
+m
+go south
+==========| Mon Nov 29 21:18:10 MST 2010 |==========
+m
+go south
+m
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+m
+go north
+m
+go north
+m
+go north
+go west
+m
+go north
+m
+==========| Mon Nov 29 21:20:08 MST 2010 |==========
+go east
+go east
+go east
+go east
+go south
+go south
+go south
+go west
+go east
+go south
+go west
+go east
+go east
+go east
+go east
+m
+==========| Mon Nov 29 21:21:38 MST 2010 |==========
+m
+go east
+go east
+go east
+go east
+m
+go south
+m
+==========| Mon Nov 29 22:19:44 MST 2010 |==========
+take torch
+go east
+go east
+take torch
+take bag
+put torch in bag
+i
+equip torch
+equip torch
+i
+go west
+==========| Mon Nov 29 22:22:33 MST 2010 |==========
+go eaast
+go east
+go west
+take torch
+==========| Mon Nov 29 22:25:05 MST 2010 |==========
+go south
+go north
+take torch
+equip torch
+go east
+attack
+go east
+go west
+light stick
+go east
+go west
+==========| Tue Nov 30 09:28:02 MST 2010 |==========
+take torch
+equip torch
+go east
+go east
+put torch in bag
+look
+==========| Tue Nov 30 09:29:01 MST 2010 |==========
+take torch
+equip torch
+go south
+go south
+go south
+go north
+go north
+m
+==========| Tue Nov 30 09:29:31 MST 2010 |==========
+m
+take torch
+m
+go south
+go north
+m
+go south
+go south
+go south
+m
+go south
+go south
+m
+==========| Tue Nov 30 09:31:16 MST 2010 |==========
+go south
+go south
+go south
+go south
+m
+go south
+m
+go east
+m
+go east
+go east
+go north
+go east
+go east
+m
+go east
+go east
+go north
+==========| Tue Nov 30 09:32:53 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+m
+go north
+go south
+==========| Tue Nov 30 09:36:41 MST 2010 |==========
+go east
+go eaast
+==========| Tue Nov 30 09:36:59 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go north
+go south
+go east
+go north
+go south
+==========| Tue Nov 30 09:39:40 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+==========| Tue Nov 30 09:45:56 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east 
+go east
+go east
+go north
+m
+go east
+go north
+m
+go east
+m
+go north
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+m
+go east
+go west
+go west
+m
+go east
+go east
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go west
+go west
+go south
+go west
+go west
+go south
+m
+go north
+go north
+m
+==========| Tue Nov 30 10:01:31 MST 2010 |==========
+go east
+go west
+go south
+go north
+go east
+==========| Tue Nov 30 10:01:55 MST 2010 |==========
+==========| Tue Nov 30 10:02:44 MST 2010 |==========
+==========| Tue Nov 30 10:03:11 MST 2010 |==========
+==========| Tue Nov 30 10:03:39 MST 2010 |==========
+go east
+go east
+go west
+==========| Tue Nov 30 10:04:32 MST 2010 |==========
+go east
+go west
+go est
+go east
+go west
+take torch
+equip torch
+go east
+light stick
+go east
+drop torch
+go west
+q
+quit
+==========| Tue Nov 30 10:32:10 MST 2010 |==========
+==========| Tue Nov 30 10:33:22 MST 2010 |==========
+
+
+
+==========| Tue Nov 30 10:34:17 MST 2010 |==========
+==========| Tue Nov 30 10:34:31 MST 2010 |==========
+==========| Tue Nov 30 10:34:37 MST 2010 |==========
+hai
+no
+q
+quit
+==========| Tue Nov 30 10:35:08 MST 2010 |==========
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+quit
+==========| Tue Nov 30 10:35:30 MST 2010 |==========
+quit
+==========| Tue Nov 30 10:35:44 MST 2010 |==========
+quit
+==========| Tue Nov 30 10:37:03 MST 2010 |==========
+quit
+==========| Tue Nov 30 10:38:52 MST 2010 |==========
+take key
+equip key
+==========| Tue Nov 30 10:39:47 MST 2010 |==========
+grab key
+==========| Tue Nov 30 10:40:31 MST 2010 |==========
+grab key
+drop key
+take key
+i
+equip key
+i
+take torch
+i
+equip torch
+i
+==========| Tue Nov 30 10:43:28 MST 2010 |==========
+take torch
+i
+equip torch
+i
+drop torch
+i
+==========| Tue Nov 30 10:49:46 MST 2010 |==========
+take torch
+equip torch
+go east
+light stick
+go east
+drop torch
+go west
+==========| Tue Nov 30 10:53:45 MST 2010 |==========
+go east
+go west
+==========| Tue Nov 30 10:54:02 MST 2010 |==========
+==========| Tue Nov 30 10:54:10 MST 2010 |==========
+take torch
+equip torch
+go south
+go north
+go south
+==========| Tue Nov 30 10:54:28 MST 2010 |==========
+go south
+go north
+take torch
+equip torch
+go south
+==========| Tue Nov 30 10:55:09 MST 2010 |==========
+take torch
+equip torch
+go south
+go north
+go south
+go north
+take key
+go east
+light stick
+go east
+go west
+go east
+go east
+go south
+go south
+m
+go south
+go south
+go east
+attack
+m
+go east
+go east
+go east
+==========| Tue Nov 30 11:09:03 MST 2010 |==========
+go south
+go east
+go east
+go east
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go noorth
+go noorttth
+go sooouuth
+go north
+go east
+geast
+geast
+east
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+m
+==========| Tue Nov 30 11:32:42 MST 2010 |==========
+==========| Tue Nov 30 12:25:08 MST 2010 |==========
+m
+go east
+go east
+go east
+go east
+m
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+m
+==========| Tue Nov 30 12:36:47 MST 2010 |==========
+m
+go east
+go east
+go east
+m
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+==========| Tue Nov 30 12:37:25 MST 2010 |==========
+go east
+go east
+go east
+m
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+m
+go west
+==========| Tue Nov 30 12:38:14 MST 2010 |==========
+go south
+go east
+go east
+go east
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+m
+go west
+m
+==========| Tue Nov 30 13:17:02 MST 2010 |==========
+take torch
+equip torch
+unequip torch
+==========| Tue Nov 30 13:17:34 MST 2010 |==========
+take torch
+eq	uip torch
+equip torch
+unequip torch
+UnEquip torch
+==========| Tue Nov 30 13:19:12 MST 2010 |==========
+grab torch
+equip torch
+unequip torch
+==========| Tue Nov 30 13:19:53 MST 2010 |==========
+take torch
+equip torch
+unequip torch
+==========| Tue Nov 30 13:24:02 MST 2010 |==========
+take torch
+equip torch
+unequip torch
+i
+look
+drop torch
+i
+take torch
+i
+equip torch
+i
+unequip torch
+i
+go south
+equip torch
+go north
+go south
+drop torch
+go south
+go north
+take torch
+go north
+go east
+equip torch
+go west
+go east
+light stick
+look stick
+go east
+drop torch
+go west
+==========| Tue Nov 30 14:34:03 MST 2010 |==========
+go east
+go east
+go east
+m
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+==========| Tue Nov 30 14:38:02 MST 2010 |==========
+==========| Tue Nov 30 14:38:52 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+g east
+==========| Tue Nov 30 14:39:08 MST 2010 |==========
+take torch
+equip torch
+go east
+go east
+go east
+go east
+go south
+go south
+go south
+go soutth
+go south
+go east
+attack
+go east
+go east
+go east
+go north
+go east
+go east
+m
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+
+
+
+==========| Tue Nov 30 14:42:36 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go north
+go east
+go east
+go north
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+
+
+==========| Tue Nov 30 14:45:48 MST 2010 |==========
+go south
+go east
+go south
+go east
+go east
+go south
+go south
+go south
+go north
+go east
+go east
+go east
+go east go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+==========| Tue Nov 30 15:01:39 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+
+go west
+
+go east
+go west
+go west
+
+==========| Tue Nov 30 15:06:28 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+
+==========| Tue Nov 30 15:07:12 MST 2010 |==========
+
+==========| Tue Nov 30 15:09:27 MST 2010 |==========
+
+==========| Tue Nov 30 15:12:15 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+o west
+go west
+go west
+go asdf
+go west
+go west
+go west
+
+==========| Tue Nov 30 15:14:11 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go northh
+go north
+go west
+go west
+go west
+go west
+go west
+
+==========| Tue Nov 30 15:20:18 MST 2010 |==========
+go east
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+
+go west
+==========| Tue Nov 30 15:26:19 MST 2010 |==========
+==========| Tue Nov 30 15:26:24 MST 2010 |==========
+go east
+go east
+go east
+go south
+go south
+go south
+go south
+go east
+go east
+go east
+go east
+go east
+go north
+go east
+go east
+go north
+go north
+go north
+go north
+go west
+go west
+go west
+go west
+go west
+go east
+==========| Tue Nov 30 15:31:39 MST 2010 |==========
+==========| Tue Nov 30 15:31:40 MST 2010 |==========
+==========| Tue Nov 30 15:35:52 MST 2010 |==========
+==========| Tue Nov 30 15:36:47 MST 2010 |==========
+==========| Tue Nov 30 15:36:59 MST 2010 |==========
+==========| Tue Nov 30 15:37:11 MST 2010 |==========
+==========| Tue Nov 30 15:37:49 MST 2010 |==========
+==========| Tue Nov 30 15:38:20 MST 2010 |==========
+==========| Tue Nov 30 15:38:32 MST 2010 |==========
+==========| Tue Nov 30 15:39:21 MST 2010 |==========
+==========| Tue Nov 30 15:39:39 MST 2010 |==========
+==========| Tue Nov 30 15:44:15 MST 2010 |==========
+go south
+go north
+take torch
+equip torch
+go south
+go north
+go south
+drop torchh
+drop torch
+go south
+go north
+take torch
+go south
+equip torch
+go north
+go south
+drop torch
+go south
+go north
+take torch
+equip torch
+go south
+m
+==========| Tue Nov 30 15:50:16 MST 2010 |==========
+go south
+m
+quit
+==========| Tue Nov 30 15:59:55 MST 2010 |==========
+go south
+m
+quit
+==========| Tue Nov 30 16:02:23 MST 2010 |==========
+go south
+m
+quit
+==========| Tue Nov 30 16:05:48 MST 2010 |==========
+go south
+m
+quit
+==========| Tue Nov 30 16:06:24 MST 2010 |==========
+go south
+m
+quit
+==========| Tue Nov 30 16:10:36 MST 2010 |==========
+go south
+go north
+m

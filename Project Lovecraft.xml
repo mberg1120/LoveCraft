@@ -1,289 +1,412 @@
 <?xml version="1.0"?>
-<Map Name="Project.Lovecraft">
+<Map Name="Project.Lovecraft" Height="6" Width="11">
 <Room Name="A1">
   <Character Name="You">
-    <Command Verb="Go" />
-    <Command Verb="Quit" />
-    <Command Verb="Take" />
-    <Command Verb="Drop" ></Command>
-    <Command Verb="Look" ></Command>
-    <Command Verb="Help" ></Command><Command Verb="Grab"></Command>
+   	<Command Verb="Go" />
+   	<Command Verb="Quit" />
+   	<Command Verb="Take" />
+   	<Command Verb="Drop" ></Command>
+   	<Command Verb="Look" ></Command>
+   	<Command Verb="Help" ></Command>
+	<Command Verb="Grab"></Command>
   	<Command Verb="I"></Command>
   	<Command Verb="Inventory"></Command>
   	<Command Verb="Map"></Command>
   	<Command Verb="M"></Command>
   	<Command Verb="Equip"></Command>
+  	<Command Verb="Attack"></Command>
+  	<Command Verb="Light"></Command>
+	<Command verb="UnEquip"></Command>
   </Character>
-  <Description>This is room $A1.  You can feel a blood pool it is too dark to  see.</Description>
-  <Description Status="lit">This is room $A1.  You can see the outline of your head in a blood pool on the ground. There are strange sigils on the ground surrounding you.</Description>
-  <Description Status="Look">Upon further inspection the blood appears to be the wrong color and texture for a human</Description>
-  <Description Status="Help">Have you grabbed the torch yet? (Type "take torch")</Description>
-  <Description Status="Second">Second description</Description>
-  <Exit Name="East" Destination="A2"> 
-    <Description Status="Lit">There is a stone archway leading east</Description>
-  </Exit>
-  <Exit Name="South" Destination="B1">
-    <Description Status="Lit">The courtyard opens to the South</Description>
-  </Exit>
-  <Item Name="Torch" Status="Light"> 
-    <Description Status="Lit">There is a burning torch</Description>
-    <Description Status="Look">The fire of the torch burns slightly greenish in color.</Description>
-    <Command Verb="Take @Me"/>
-    <Command Verb="Drop @Me"/>
-    <Command Verb="Look at @Me"/>
-    <Command Verb="Attack"/>
-    <Command Verb="Attack @Monster"/><Command Verb="Grab @Me"></Command>
-  	<Command Verb="Equip @Me"></Command>
-  </Item>
-  <Item Name="Key" Status="UnLock">
-  	<Description>There is a Key on the ground.</Description><Command Verb="Take @Me"></Command>
-  	
-  	<Command Verb="Drop @Me"></Command>
-  </Item>
+  <Description>You're in the original room... Why don't you have the torch? Well, it's too dark to see anything, smart move. </Description>
+ 	 <Description Status="lit">Welcome user, this is Project Love Craft... You have found yourself lying on the ground, 
+and it  appears you have a bump on the back of your head. As you look around, you only have 3
+areas that are visible, and it appears you are stuck in a dungeon or cave of some sort. Once you go forth 
+into this dungeon, you will find objects, it is your choice how to handle them. You will have the ability to 
+receive hints in certain areas; Your first hint is that you must type 'go' and then the word North, West, East or South to move.</Description>
+ 	 <Description Status="Look">Upon further inspection the blood appears to be the wrong color and texture for a human</Description>
+ 	 <Description Status="Help">Have you grabbed the torch yet? (Type "take torch")</Description>
+	  <Description Status="Second">You have returned to the original room. There is nothing more to see here. </Description>
+	  <Exit Name="East" Destination="A2"> 
+	    <Description Status="Lit">There is a stone archway leading east</Description>
+	  </Exit>
+	  <Exit Name="South" Destination="B1">
+	    <Description Status="Lit">The courtyard opens to the South</Description>
+	  </Exit>
+	  <Item Name="Torch" Status="Light"> 
+	    <Description Status="Lit">There is a burning torch</Description>
+	    <Description Status="Look">The fire of the torch burns slightly greenish in color.</Description>
+	    <Command Verb="Take @Me"/>
+	    <Command Verb="Drop @Me"/>
+	    <Command Verb="Look at @Me"/>
+	    <Command Verb="Attack"/>
+	    <Command Verb="Attack @Monster"/>
+	    <Command Verb="Grab @Me"></Command>
+	    <Command Verb="Equip @Me"></Command>
+	    <Command Verb="UnEquip @Me"></Command>
+	  </Item>
+	  <Item Name="Key" Status="UnLock">
+  	<Description>There is a Key on the ground.</Description>
+	<Command Verb="Take @Me"></Command>
+    	<Command Verb="Drop @Me"></Command>
+    	<Command Verb="Grab @Me"></Command>
+	  </Item>
   <Command Verb="Go @Exit" /><Command Verb="Look"></Command>
 	
 </Room>
 <Room Name="A2">
+
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="lit">There is blood dripping from the ceiling... What is happening in this god awful place?</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="A1"/>
   <Exit Name="East" Destination="A3"/>
   <Exit Name="South" Destination="B2"/>
-  <Description>This is room $A3.  There are lots of smelly goblins</Description><Monster Name="Shoggoth">
-    <Description>You hear a buggling sound as something squishes across the unlit room</Description>
-    <Description Status="Lit">There is a bubbling mass of tissue with hundred of eyes and tentacles shambling through the room.  It seems to notice you</Description> 
-    <Description Status="Dead">The bubbling mass of tissue lays slumpt on the ground with the tentacles limp and the eyes devoid of life.</Description>
-    <Description Status="Dead,Dark">The smell of something foul and unholy fills this area.</Description>
-    <Description Status="Attacking">The thing lumbers towards you and you are engulfed in the tissue.  A crushing feeling passes quickly as you know no more.</Description>
-  </Monster>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
-  <Item Name="Torch"> 
-    <Description Status="Lit">There is a burning torch</Description>
-    <Description Status="Look">The fire of the torch burns slightly greenish in color.</Description>
-    <Command Verb="Look at @Me"/>
-    <Command Verb="Light"/>
-    <Command Verb="Light @Me"/><Description>There's a torch on the wall.</Description>
+
+  <Item Name="Stick">
+  	<Description>There appears to be an object sticking out of the wall.</Description><Description Status="Lit">There appears to be a lightable stick in the wall.</Description>
+  	<Description Status="Look">The stick is hand made... interesting.</Description>
+  	<Description Status="Fire">There is a burning Stick on the wall, illuminating the room.</Description>
+  	<Command Verb="Look at @Me" />
+  	<Command Verb="Light" />
+  	<Command Verb="Light @Me" />
+
   </Item>
 </Room>
 <Room Name="A3">
   <Exit Name="East" Destination="A4"></Exit>
   <Exit Name="West" Destination="A2"/>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="South" Destination="B3"/>
-  <Item Name="Bag">
-    <Command Verb="Put @Item In @Me"/>
-    <Command Verb="Take @Item From @Me"/>
-  </Item>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="A4">
   <Exit Name="West" Destination="A3"/>
   <Exit Name="South" Destination="B4"/>
-  <Description>This is room $B1, The room is too dark to see.</Description>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
   <Description Status="Lit">This chamber has nothing of interest.</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="B1">
   <Exit Name="North" Destination="A1"/>
   <Exit Name="East" Destination="B2"/>
   <Exit Name="South" Destination="C1"/>
-  <Description>This is room $B2.  It is too dark to see.</Description>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
   <Description Status="Lit">This is room $B2.  Stange sigils cover the walls</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="B2">
   <Exit Name="North" Destination="A2"/>
   <Exit Name="West" Destination="B1"/>
   <Exit Name="East" Destination="B3"/>
   <Exit Name="South" Destination="C2"/>
-  <Description>This is room $B3.  OMG WHY GOD WHY!!!</Description>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="lit"> Well, this room is lit and I am dumb for not noticing. </Description>
+  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="B3">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="A3"/>
   <Exit Name="West" Destination="B2"/>
   <Exit Name="South" Destination="C3"/>
   <Exit Name="East" Destination="B4"></Exit>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="B4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">Yo dawg, this is B4</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="A4"/>
   <Exit Name="West" Destination="B3"/>
   <Exit Name="South" Destination="C4"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="C1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="B1"/>
   <Exit Name="East" Destination="C2"/>
   <Exit Name="South" Destination="D1"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="C2">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="B2"/>
   <Exit Name="West" Destination="C1"/>
   <Exit Name="East" Destination="C3"></Exit>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="C3">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="B3"/>
   <Exit Name="West" Destination="C2"/>
   <Exit Name="East" Destination="C4"></Exit>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"></Command>
 </Room>
 <Room Name="C4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="B4"/>
   <Exit Name="South" Destination="D4"/>
-  <Exit Name="West" Destination="C3"></Exit><Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
+  <Exit Name="West" Destination="C3"></Exit>
+  <Command Verb="Go @Exit" />
 </Room>
 <Room Name="D1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="C1"></Exit>
   <Exit Name="South" Destination="E1"/>
-  <Exit Name="East" Destination="Chasm"></Exit><Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
+  <Command Verb="Go @Exit" />
 </Room>
 <Room Name="D4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/><Exit Name="North" Destination="C4"></Exit>
-	<Exit Name="South" Destination="E4"></Exit>
+  <Exit Name="North" Destination="C4"></Exit>
+  <Exit Name="South" Destination="E4"></Exit>
 </Room>
 <Room Name="E1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="D1"/>
   <Exit Name="South" Destination="F1"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="E4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="D4"></Exit>
   <Exit Name="East" Destination="E5"/>
   <Exit Name="South" Destination="F4"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/><Exit Name="West" Destination="Chasm"></Exit>
 </Room>
-
 <Room Name="F1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="E1"/>
   <Exit Name="East" Destination="F2"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="F2">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="East" Destination="F3"/>
   <Exit Name="West" Destination="F1"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"></Command>
 </Room>
 <Room Name="F3">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="East" Destination="F4"/>
   <Exit Name="West" Destination="F2"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="F4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="E4"/>
   <Exit Name="West" Destination="F3"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
-
 <Room Name="E7">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="E6"></Exit>
   <Exit Name="East" Destination="E8"/>
   <Command Verb="Go @Exit" ></Command>
-  <Command Verb="Look @Exit"/>
 </Room>
-
-
 <Room Name="Final">
-  <Exit Name="East" Destination="$A6"/>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="East" Destination="A6"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="A6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="Final"/>
   <Exit Name="East" Destination="A7"></Exit>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="A7">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="A6"/>
   <Exit Name="East" Destination="A8"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="A8">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="A7"/>
   <Exit Name="East" Destination="A9"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="A9">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="A8"/>
   <Exit Name="East" Destination="A10"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="A10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="A9"/>
   <Exit Name="South" Destination="B10"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="B10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="A10"/>
   <Exit Name="South" Destination="C10"/>
   <Command Verb="Go @Exit" />
   <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="C10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="North" Destination="B10"/>
   <Exit Name="South" Destination="D10"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="D10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="West" Destination="D9"/>
   <Exit Name="North" Destination="C10"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="D9">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="East" Destination="D10"/>
   <Exit Name="West" Destination="D8"></Exit>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="E8">
-  <Exit Name="West" Destination="E8"/>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="West" Destination="E7"/>
   <Exit Name="North" Destination="D8"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="D8">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
   <Exit Name="South" Destination="E8"/>
   <Exit Name="East" Destination="D9"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 <Room Name="E6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
   <Exit Name="North" Destination="D6"/>
   <Exit Name="West" Destination="E5"/>
   <Exit Name="South" Destination="F6"/>
   <Exit Name="East" Destination="E7"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="D6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="South" Destination="E6"/>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="F6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="North" Destination="E6"/>
+  <Command Verb="Go @Exit" />
 </Room>
 <Room Name="E5">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a burning torch</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+   <Monster Name="Shoggoth">
+    <Description>You hear a buggling sound as something squishes across the unlit room</Description>
+    <Description Status="Lit">There is a bubbling mass of tissue with hundred of eyes and tentacles shambling through the room.  It seems to notice you</Description> 
+    <Description Status="Dead">The bubbling mass of tissue lays slumpt on the ground with the tentacles limp and the eyes devoid of life.</Description>
+    <Description Status="Dead,Dark">The smell of something foul and unholy fills this area.</Description>
+    <Description Status="Attacking">The thing lumbers towards you and you are engulfed in the tissue.  A crushing feeling passes quickly as you know no more.</Description>
+  </Monster>
   <Exit Name="West" Destination="E4"/>
   <Exit Name="East" Destination="E6"/>
   <Command Verb="Go @Exit" />
-  <Command Verb="Look @Exit"/>
 </Room>
 </Map>

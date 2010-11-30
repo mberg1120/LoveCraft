@@ -108,7 +108,6 @@ public class CharacterObject extends CreatureObject {
 			_equipped = null;
 			return false;
 		}
-		equipment.setLocation(this);
 		_equipped = equipment;
 		return true;
 	}

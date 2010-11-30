@@ -28,6 +28,7 @@ public class GameObject {    //Need to do think(),  need to do doVerb().  Need t
 	boolean currentRoom = false;
 	boolean beenInRoom = false;
 	boolean isFirst = true;
+	boolean isOnFire = false;
 	public GameObject(Node XML){
 		_XMLBlock = XML.cloneNode(true);
 		_name = Client.getXMLElement(XML, "Name");
@@ -55,23 +56,33 @@ public class GameObject {    //Need to do think(),  need to do doVerb().  Need t
 		//get all possible descriptions for this object
 		NodeList descriptions = Client.getXMLNodes(_XMLBlock, "Description");
 		String StatusTag = "";
+//		String itemTag = "";
 		if(isLit() || "Attacking".equalsIgnoreCase(input)){
 			if(input != null)
 				StatusTag = input;
 			else
 				StatusTag = "Lit";
 		}
-		for(int i = 0; i < descriptions.getLength(); i++){
-			if(descriptions.item(i).getParentNode() != null && descriptions.item(i).getParentNode().equals(_XMLBlock)) {
-				if(Client.getXMLElement(descriptions.item(i), "Status").equalsIgnoreCase(StatusTag)) {
+		for(int i = 0; i < descriptions.getLength(); i++)
+		{
+			if(descriptions.item(i).getParentNode() != null && descriptions.item(i).getParentNode().equals(_XMLBlock)) 
+			{
+				if(Client.getXMLElement(descriptions.item(i), "Status").equalsIgnoreCase(StatusTag)) 
+				{
 					Node n = descriptions.item(i);
 					_description = n.getFirstChild().getNodeValue();
 				}
+//				if(Client.getXMLElement(descriptions.item(i), "Status").equalsIgnoreCase(StatusTag) && _items.get(i)._status.equalsIgnoreCase("unLit"))
+//				{
+//					Node n = descriptions.item(i);
+//					_description = n.getLocalName("unLit");)
+//				}
 			}	
 		}
 		return(_description);
 	}
-	protected boolean isLight(){
+	protected boolean isLight()
+	{
 		if(this.getStatus().equalsIgnoreCase("Light")) 
 			return true;
 		return false;
@@ -85,7 +96,8 @@ public class GameObject {    //Need to do think(),  need to do doVerb().  Need t
 		GameObject entity = null;
 		for(Iterator<GameObject> i = _inventoryList.iterator(); i.hasNext(); ){
 			 entity = i.next();
-			if(entity != null && entity != this) { 
+			if(entity != null && entity != this) 
+			{ 
 				if(entity.isLight())  
 					return true;
 			}
@@ -253,6 +265,11 @@ public class GameObject {    //Need to do think(),  need to do doVerb().  Need t
 		for(int i = 0; i < _inventoryList.size(); i++)
 		{
 			inventory += "-" + _inventoryList.get(i)._name + "\n";
+		}
+		if(CharacterObject.you.equipped() != null)
+		{
+			inventory += "\nEquipped:\n";
+			inventory += CharacterObject.you.equipped()._name + "\n";
 		}
 		return inventory;
 		

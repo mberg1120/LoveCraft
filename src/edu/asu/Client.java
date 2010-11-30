@@ -7,6 +7,7 @@ import java.io.PrintStream;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -30,21 +31,34 @@ public class Client {
 	 * @author z
 	 */
 	static int x = 0, y = 0; //For the map
-	static ArrayList roomList = new ArrayList();
-	private static Crawler mapCrawler;
+//	private static Crawler mapCrawler;
 	public static void main(String[] args) 
 	{
+		x = 0;
+		y = 0;
+		ArrayList roomList = new ArrayList();
 		String input;
+		String descript;
 		//step 1: Load XML file
 		Element gameFile = parseXMLFile("Project Lovecraft.xml");
 		//step 2: Run through the XML file, and Build the map
+		String y1 = Client.getXMLElement(gameFile, "Height");
+		String x1 = Client.getXMLElement(gameFile, "Width");
+
+	    int maxX = Integer.parseInt(x1.trim());
+	    int maxY = Integer.parseInt(y1.trim());
+		Map2.height = maxY;
+		Map2.width = maxX;
+		Map2.setup();
 		NodeList parseRoom = Client.getXMLNodes(gameFile, "Room");
 		if(parseRoom != null && parseRoom.getLength() > 0)
 			for(int i = 0; i < parseRoom.getLength(); i++){
-				System.out.print((i+1) + ": ");
+//				System.out.print((i+1) + ": ");
 				roomList.add(new RoomObject(parseRoom.item(i)));
-				System.out.println("");
+				Map2.fillout(((GameObject)roomList.get(i))._name, ((GameObject)roomList.get(i)).currentRoom);
+//				System.out.println("");
 			}
+//		for(int i = 0; i < roomList.size(); i++)
 		Scanner scan = new Scanner(System.in);
 		FileOutputStream logger;
 		PrintStream logged;
@@ -58,9 +72,12 @@ public class Client {
 		}
 		Date now = new Date();
 		GameObject room = null;
+		RoomObject tempRoom;
 		logged.println("==========| " + now.toString() + " |==========");
-		mapCrawler = new Crawler(roomList);
-		mapCrawler.findDimensions();
+//		mapCrawler = new Crawler(roomList);
+//		mapCrawler.findDimensions();
+//		mapCrawler.maxX = maxX;
+//		mapCrawler.maxY = maxY;
 		do {
 			if(CharacterObject.you.location().equals(room)) {
 				CreatureObject monster;
@@ -69,14 +86,53 @@ public class Client {
 					System.out.print(monster.think());
 				}
 			}
-			else {
-			room = CharacterObject.you.location();
-			room.currentRoom = true;
-			mapCrawler.userBeenRoom(x, y);
+			else
+			{
+				tempRoom = (RoomObject)room;
+				room = CharacterObject.you.location();
+				room.currentRoom = true;
+//				mapCrawler.userBeenRoom(x, y);
+				if(room._name.equalsIgnoreCase("Final"))
+				{
+					System.out.println(room.description(null));
+					do
+					{
+						input = scan.next();
+						if(input.equalsIgnoreCase("Yes") || input.equalsIgnoreCase("Y"))
+						{
+							System.out.println(room.description("second"));
+							System.exit(0);
+						}
+						else if (input.equalsIgnoreCase("No") || input.equalsIgnoreCase("n"))
+						{
+							CharacterObject.you.setLocation(tempRoom);
+							room = CharacterObject.you.location();
+							System.out.println("You are back in the previous room.");
+							input = scan.nextLine();
+						}
+						else
+							System.out.println("Type [Y]es or [No].");
+					}while(room._name.equalsIgnoreCase("Final"));
+				}
 				if(room.isFirst == true)
 					System.out.println(room.description(null));
 				else
-					System.out.println(room.description("Second"));
+				{				
+					descript = room.description("Second");
+//					String[] descript2 = descript.split("\n");
+					System.out.println(room._description);
+//					System.out.println(descript);
+					for(int i = 0; i < room.inventory().size(); i++)
+					{
+						if(room.inventory().get(i) instanceof ExitObject && room.inventory().get(i).isLit())
+							System.out.println(room.inventory().get(i).description(null));
+						if(room.inventory().get(i).isOnFire)
+							System.out.println(room.inventory().get(i).description("Fire"));
+						else if(room.inventory().get(i) instanceof ItemObject)
+							System.out.println(room.inventory().get(i).description(null));
+					}
+//					System.out.println(room.description("Second"));
+				}
 				if(CharacterObject.you.equipped() != null)
 					System.out.println("You are holding a " + CharacterObject.you.equipped().name());
 			}
@@ -109,11 +165,16 @@ public class Client {
 				}while(keepGoing == true);
 				System.exit(0);
 			}
-			else
-				System.out.println(CharacterObject.you.location().name() + ">");
-			input = scan.nextLine();
-			logged.println(input);
-			System.out.println(CharacterObject.you.doVerb(null, input));
+//			System.out.println(CharacterObject.you.location().name() + ">");
+			input = null;
+			try{
+				input = scan.nextLine();
+				logged.println(input);
+				System.out.println(CharacterObject.you.doVerb(null, input));
+			}catch(NoSuchElementException e)
+			{
+				;
+			}
 		} while(!input.equalsIgnoreCase("Quit"));
 		try {
 			logger.close();
@@ -137,11 +198,14 @@ public class Client {
 			dom = db.parse(_fileName);
 			return dom.getDocumentElement();
 		} catch(ParserConfigurationException pce) {
-			pce.printStackTrace();
+//			pce.printStackTrace();
+		} catch(NullPointerException pce) {
+//			pce.printStackTrace();
 		} catch(SAXException se){
-			se.printStackTrace();
+//			se.printStackTrace();
+			System.out.println("SAXException... Nice fail.\n");
 		} catch(IOException ioe){
-			ioe.printStackTrace();
+//			ioe.printStackTrace();
 		}
 		return null;
 	}
@@ -192,7 +256,6 @@ public class Client {
 		CharacterObject gActor;
 		GameObject target;
 		String[] userInput = translation.split(" ");
-		
 /*		DEBUG PRINT
  		if(gObject == null)
 			System.out.println(gSubject.name() + ":" + translation);
@@ -201,6 +264,7 @@ public class Client {
 		else
 			System.out.println(gSubject.name() + "->" + gObject.name() + ":" + translation);
 */	
+		
 		if(userInput[0].equalsIgnoreCase("Quit")){ // "Quit", ends the game and terminates the program
 			System.out.println("Goodbye!");
 			return "";
@@ -220,22 +284,23 @@ public class Client {
 					System.out.println("You can't go that way.");
 				else
 				{
-					mapCrawler.max[x][y] = 2;
+//					mapCrawler.max[x][y] = 2;
 					CreatureObject you = (CreatureObject)gSubject;
 					you.setLocation(exit.destination());
 					String response = "You go " + userInput[1] + ".\n";
 					room.beenInRoom = true;
 					room.currentRoom = true;
-					if(userInput[1].equalsIgnoreCase("North"))
-						y--;
-					else if(userInput[1].equalsIgnoreCase("South"))
-						y++;
-					else if(userInput[1].equalsIgnoreCase("East"))
-						x++;
-					else if(userInput[1].equalsIgnoreCase("West"))
-						x--;
-					mapCrawler.currentRoom(room);
-					mapCrawler.userBeenRoom(x, y);
+					if(!room._name.equalsIgnoreCase("Final"))
+					{
+						if(userInput[1].equalsIgnoreCase("North"))
+							Map2.moveNorth();
+						else if(userInput[1].equalsIgnoreCase("South"))
+							Map2.moveSouth();
+						else if(userInput[1].equalsIgnoreCase("East"))
+							Map2.moveEast();
+						else if(userInput[1].equalsIgnoreCase("West"))
+							Map2.moveWest();
+					}
 					System.out.print(response);
 				}
 			}		
@@ -243,7 +308,7 @@ public class Client {
 		}
 		else if(userInput[0].equalsIgnoreCase("Map") || userInput[0].equalsIgnoreCase("M"))
 		{
-			mapCrawler.callMe();
+			Map2.display();
 		}
 		else if(userInput[0].equalsIgnoreCase("Look")){ // "Look ...", a series of commands (see below)			
 			if(gSubject instanceof CharacterObject)
@@ -274,7 +339,7 @@ public class Client {
 		{
 			return CharacterObject.you.inventoryContents();
 		}
-		else if(userInput[0].equalsIgnoreCase("Take")){ // "Take @Item", removes the declared item from a rooms inventory and puts it into the players inventory
+		else if(userInput[0].equalsIgnoreCase("Take") || userInput[0].equalsIgnoreCase("Grab")){ // "Take @Item", removes the declared item from a rooms inventory and puts it into the players inventory
 			if(userInput.length < 2)
 				System.out.println("Take what?");		
 			else 
@@ -310,7 +375,11 @@ public class Client {
 		}
 		else if(userInput[0].equalsIgnoreCase("Equip"))
 		{
-			if(userInput.length < 2)
+			if(CharacterObject.you.equipped() != null)
+			{
+				System.out.println("You may only have 1 item equipped.");
+			}
+			else if(userInput.length < 2)
 				System.out.println("Equip what?");
 			else
 			{
@@ -322,9 +391,29 @@ public class Client {
 				if(target == null)
 					System.out.println("You can't equip " + userInput[1] + " because you don't have it...");
 				gActor.equip((ItemObject)target);
+				System.out.println("You have equipped " + target._name + ".");
 			}
 		}
-
+		else if(userInput[0].equalsIgnoreCase("UnEquip"))
+		{
+			if(CharacterObject.you.equipped() == null)
+				System.out.println("You have nothing to unequip... ");
+			else if(userInput.length < 2)
+				System.out.println("Unequip what?");
+			else
+			{
+				if(gSubject instanceof CharacterObject)
+					gActor = (CharacterObject)gSubject;
+				else
+					return "lolno.";
+				target = gActor.equipped();
+				if(target == null)
+					System.out.println("This should not be null.");
+				System.out.println("You have unequipped " + target._name + "!");
+				gActor.equip(null);
+			}
+				
+		}
 		else if(userInput[0].equalsIgnoreCase("Drop")){ // "Drop @Item", Removes the declared item from the players inventory and puts it into the room's inventory
 			if(userInput.length < 2)
 				System.out.println("Drop what?");
@@ -335,19 +424,19 @@ public class Client {
 					return "But you have no hands!!!";
 				target = gActor.getContents(userInput[1]);
 				if(target == null)
-					System.out.println("You don't have a " + userInput[1]);
+					return "You don't have a " + userInput[1];
 				if(target.equals(gActor.equipped()))
 				{
 					gActor.equip(null);
 				}
-				target.setLocation(gActor.location());
 
 				CharacterObject.you._location.addToInventory(target);
 				CharacterObject.you.removeFromInventory(target);
 				System.out.println("You put down the " + target.name());
 			}
 		}
-		else if(userInput[0].equalsIgnoreCase("Attack")){ // "Attack" or "Attack @Monster, Useable only if a torch is the equipped item and will set the monster's status to dead
+		else if(userInput[0].equalsIgnoreCase("Light"))
+		{
 			if(gSubject instanceof CharacterObject)
 				gActor = (CharacterObject)gSubject;
 			else if(gObject instanceof CharacterObject)
@@ -355,34 +444,82 @@ public class Client {
 			else{
 				return "You have no hands!!!";
 			}	
-			if(userInput.length < 2){
-				target = null;
-				for(Iterator<CreatureObject> i = gActor.location().creatures().iterator(); i.hasNext() && target == null; ){
-					CreatureObject monster = i.next();
-					if(monster instanceof MonsterObject)
-						target = monster;
-				}
-			}
+			target = null;
+			if(userInput.length < 2)
+				System.out.println("Light what?");
 			else if(userInput.length == 2)
-				target = gActor.location().getContents(userInput[1]);
-			else
-				return "Attack what, exactly?  The darkness?";
-			
+					target = gActor.location().getContents(userInput[1]);
 			if(target == null)
-				System.out.println("Attacking imaginary enemies already? The hallucinations must be starting early... how long HAVE you been down here?");
-			if(target instanceof MonsterObject){
-				if(target.getStatus().equalsIgnoreCase("Dead"))
-					System.out.println("You mercilessly pummel the corpse of a " + target.name() + ". It appears to be quite dead.");
-				else{
-					target.setStatus("Dead");
-					System.out.println("You swing your " + gActor.equipped().name() + " at the " + target.name() + ", killing it in one blow.");
+				System.out.println("Nullified.");
+			else if(target instanceof ItemObject)
+			{
+				if(gActor.equipped() != null)
+				{
+					if(gActor.equipped().isLight())
+					{	
+						target.setStatus("Light");
+						gActor._location.setStatus("Lit");
+						target.isOnFire = true;
+						System.out.println("You light the " + target.name() + " on the wall.");
+					}
+					else
+						System.out.println("You don't have a light source equipped.");
 				}
+				else
+					System.out.println("You can not light " + target.name() + ". You have nothing equipped!");
 			}
 			else
-				System.out.println("You attack the " + target.name() + ". It doesn't actually DO anything, but you feel better.");
-				
+				System.out.println("That my friend, is not an item.");
 		}
-
+		else if(userInput[0].equalsIgnoreCase("Attack"))
+		{ // "Attack" or "Attack @Monster, Useable only if a torch is the equipped item and will set the monster's status to dead
+		if(gSubject instanceof CharacterObject)
+			gActor = (CharacterObject)gSubject;
+		else if(gObject instanceof CharacterObject)
+			gActor = (CharacterObject)gObject;
+		else{
+			return "You have no hands!!!";
+		}	
+		boolean thisIs = false;
+		if(gActor.equipped() != null)
+			for(int i = 0; i < gActor.equipped().verbs().size(); i++)
+				if(gActor.equipped().verbs().get(i).getVerb().equalsIgnoreCase("Attack"))
+					thisIs = true;
+		if(userInput.length < 2)
+		{
+			target = null;
+			for(Iterator<CreatureObject> i = gActor.location().creatures().iterator(); i.hasNext() && target == null; )
+			{
+				CreatureObject monster = i.next();
+				if(monster instanceof MonsterObject)
+					target = monster;
+			}
+		}
+		else if(userInput.length == 2)
+			target = gActor.location().getContents(userInput[1]);
+		else
+			return "Attack what, exactly?  The darkness?";
+		if(target == null)
+			return "Attacking imaginary enemies already? The hallucinations must be starting early... how long HAVE you been down here?";
+		if(gActor.equipped() == null)
+			System.out.println("Why would you try to attack with no items equipped?");
+		else if(thisIs == false)
+		{
+			System.out.println("Your item can't be used to attack... I'm so sorry!");
+		}
+		else if(target instanceof MonsterObject)
+		{
+			if(target.getStatus().equalsIgnoreCase("Dead"))
+				System.out.println("You mercilessly pummel the corpse of a " + target.name() + ". It appears to be quite dead.");
+			else
+			{
+				target.setStatus("Dead");
+				System.out.println("You swing your " + gActor.equipped().name() + " at the " + target.name() + ", killing it in one blow.");
+			}
+		}
+		else
+			System.out.println("You attack the " + target.name() + ". It doesn't actually DO anything, but you feel better.");
+		}
 		else if(userInput[0].equalsIgnoreCase("Help")) { // "Help", will print a description of the room designed to provide helpful information to the player.  Note room must lit in order to get this description
 			if(gSubject instanceof CharacterObject)
 				gActor = (CharacterObject)gSubject;
