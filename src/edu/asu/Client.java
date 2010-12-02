@@ -18,7 +18,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
+import sun.audio.*;
+import java.io.*;
 
 public class Client {
 
@@ -34,13 +35,16 @@ public class Client {
 //	private static Crawler mapCrawler;
 	public static void main(String[] args) 
 	{
+//	static boolean MusicOn = true;
+		Music music = new Music();
+		Thread music_thread = new Thread(music);
 		x = 0;
 		y = 0;
 		ArrayList roomList = new ArrayList();
 		String input;
 		String descript;
 		//step 1: Load XML file
-		Element gameFile = parseXMLFile("Project Lovecraft.xml");
+		Element gameFile = parseXMLFile("Dungeon.xml");
 		//step 2: Run through the XML file, and Build the map
 		String y1 = Client.getXMLElement(gameFile, "Height");
 		String x1 = Client.getXMLElement(gameFile, "Width");
@@ -60,6 +64,8 @@ public class Client {
 			}
 //		for(int i = 0; i < roomList.size(); i++)
 		Scanner scan = new Scanner(System.in);
+		((GameObject)roomList.get(0)).currentRoom = true;
+		Map2.fillout(((GameObject)roomList.get(0))._name, ((GameObject)roomList.get(0)).currentRoom);
 		FileOutputStream logger;
 		PrintStream logged;
 		try {
@@ -78,7 +84,11 @@ public class Client {
 //		mapCrawler.findDimensions();
 //		mapCrawler.maxX = maxX;
 //		mapCrawler.maxY = maxY;
+		music_thread.start();
+			
 		do {
+//			if(Music.AudioPlayer() == false)
+//				Music.music();
 			if(CharacterObject.you.location().equals(room)) {
 				CreatureObject monster;
 				for(Iterator<CreatureObject> i 	= room.creatures().iterator(); i.hasNext(); ){
@@ -94,28 +104,59 @@ public class Client {
 //				mapCrawler.userBeenRoom(x, y);
 				if(room._name.equalsIgnoreCase("Final"))
 				{
-					System.out.println(room.description(null));
-					do
+					if(room.isLit())
 					{
-						input = scan.next();
-						if(input.equalsIgnoreCase("Yes") || input.equalsIgnoreCase("Y"))
-						{
+						if(!room.isFirst)
 							System.out.println(room.description("second"));
-							System.exit(0);
-						}
-						else if (input.equalsIgnoreCase("No") || input.equalsIgnoreCase("n"))
-						{
-							CharacterObject.you.setLocation(tempRoom);
-							room = CharacterObject.you.location();
-							System.out.println("You are back in the previous room.");
-							input = scan.nextLine();
-						}
 						else
-							System.out.println("Type [Y]es or [No].");
-					}while(room._name.equalsIgnoreCase("Final"));
+							System.out.println(room.description(null));
+						do
+						{
+							input = scan.next();
+							if(input.equalsIgnoreCase("Yes") || input.equalsIgnoreCase("Y"))
+							{
+								System.out.println(room.description("final"));
+//								Music.stop();
+								System.exit(0);
+							}
+							else if (input.equalsIgnoreCase("No") || input.equalsIgnoreCase("n"))
+							{
+								room.isFirst = false;
+								CharacterObject.you.setLocation(tempRoom);
+								room = CharacterObject.you.location();
+								System.out.println("You are back in the previous room.");
+								input = scan.nextLine();
+							}	
+							else
+								System.out.println("Type [Y]es or [No].");
+						}while(room._name.equalsIgnoreCase("Final"));
+					}
+					else
+					{
+						System.out.println("I'm sorry, I can't let you do that Dave.");
+						System.out.println("Yeah, and I put you back in the previous room.");
+						CharacterObject.you.setLocation(tempRoom);
+						room = CharacterObject.you.location();
+					}
 				}
 				if(room.isFirst == true)
-					System.out.println(room.description(null));
+				{
+					descript = room.description(null);
+//				String[] descript2 = descript.split("\n");
+					System.out.println(room._description);
+//				System.out.println(descript);
+					for(int i = 0; i < room.inventory().size(); i++)
+					{
+						if(room.inventory().get(i) instanceof CreatureObject)
+							System.out.println(room.inventory().get(i).description(null));
+						if(room.inventory().get(i) instanceof ExitObject && room.inventory().get(i).isLit())
+							System.out.println(room.inventory().get(i).description(null));
+						if(room.inventory().get(i).isOnFire)
+							System.out.println(room.inventory().get(i).description("Fire"));
+						else if(room.inventory().get(i) instanceof ItemObject)
+							System.out.println(room.inventory().get(i).description(null));
+					}
+				}
 				else
 				{				
 					descript = room.description("Second");
@@ -124,6 +165,8 @@ public class Client {
 //					System.out.println(descript);
 					for(int i = 0; i < room.inventory().size(); i++)
 					{
+						if(room.inventory().get(i) instanceof CreatureObject)
+							System.out.println(room.inventory().get(i).description(null));
 						if(room.inventory().get(i) instanceof ExitObject && room.inventory().get(i).isLit())
 							System.out.println(room.inventory().get(i).description(null));
 						if(room.inventory().get(i).isOnFire)
@@ -144,6 +187,7 @@ public class Client {
 					input = scan.nextLine();
 					if(input.equalsIgnoreCase("R") || input.equalsIgnoreCase("Restart"))
 					{
+						Music.stop();
 						System.out.println("Your adventure will be restarted in 5 seconds!");
 						try {
 							Thread.sleep(5000);
@@ -172,12 +216,12 @@ public class Client {
 				logged.println(input);
 				System.out.println(CharacterObject.you.doVerb(null, input));
 			}catch(NoSuchElementException e)
-			{
-				;
-			}
+			{}catch(NullPointerException e){}
 		} while(!input.equalsIgnoreCase("Quit"));
 		try {
 			logger.close();
+//			Music.stop();
+			System.exit(0);
 		} catch (IOException e) {
 			System.err.println("Something went wrong.");   //change that message
 			e.printStackTrace();
@@ -244,6 +288,13 @@ public class Client {
 		Element XMLData = (Element)XML;
 		return XMLData.getElementsByTagName(NodeType); 
 	}
+	public static void commandList()
+	{
+		System.out.println("Command List:");
+		for(int i = 0; i < CharacterObject.you.verbs().size(); i++)
+//			if(CharacterObject.you.verbs().get(i).matches("C") ||)
+			System.out.println("-" + CharacterObject.you._verbs.get(i).getVerb());
+	}
 	/**This method takes in the subject and object of a translated verb statement.  From there it
 	 * will perform the necessary steps needed to carry out that user inputed verb command.
 	 * @param gSubject
@@ -251,6 +302,7 @@ public class Client {
 	 * @param translation
 	 * @author Michael Berg
 	 */
+	@SuppressWarnings("deprecation")
 	public static String doVerb(GameObject gSubject, GameObject gObject, String translation) 
 	{
 		CharacterObject gActor;
@@ -267,13 +319,16 @@ public class Client {
 		
 		if(userInput[0].equalsIgnoreCase("Quit")){ // "Quit", ends the game and terminates the program
 			System.out.println("Goodbye!");
+
+//			Music.stop();
 			return "";
 		}
 		else if(userInput[0].equalsIgnoreCase("Go"))
 		{ 
 			CharacterObject.you.location().currentRoom = false;
 			// "Go @Exit", where @Exit is the name of a Exit
-			CharacterObject.you._location.isFirst = false;
+			if(CharacterObject.you._location.isLit())
+				CharacterObject.you._location.isFirst = false;
 			if(userInput.length < 2)
 				return "Go where?";
 			else 
@@ -290,7 +345,7 @@ public class Client {
 					String response = "You go " + userInput[1] + ".\n";
 					room.beenInRoom = true;
 					room.currentRoom = true;
-					if(!room._name.equalsIgnoreCase("Final"))
+					if(exit.destination().name().equalsIgnoreCase("Final") == false)
 					{
 						if(userInput[1].equalsIgnoreCase("North"))
 							Map2.moveNorth();
@@ -306,9 +361,41 @@ public class Client {
 			}		
 			
 		}
+//		else if(userInput[0].equalsIgnoreCase("Music") && userInput[1].equalsIgnoreCase("On"))
+//		{
+//			if(MusicOn == true)
+//				System.out.println("Music is already running.");
+//			else
+//			{
+//				Music.music();
+//				MusicOn = true;
+//			}
+//		}
+//		else if(userInput[0].equalsIgnoreCase("Music") && userInput[1].equalsIgnoreCase("Off"))
+//		{
+//			if(MusicOn == true)
+//			{
+//				Music.stop();
+//				MusicOn = false;
+//			}
+//			else
+//				System.out.println("There isn't any music to stop...");
+//		}
 		else if(userInput[0].equalsIgnoreCase("Map") || userInput[0].equalsIgnoreCase("M"))
 		{
-			Map2.display();
+			if(CharacterObject.you.equipped() != null)
+			{
+				if(CharacterObject.you.equipped().isLight())
+					Map2.display();
+				else
+					System.out.println("You don't have a light source equipped, so you can't see the map.");
+			}
+			else
+				System.out.println("You can't look at your map without a light source...");
+		}
+		else if(userInput[0].equalsIgnoreCase("Command") || userInput[0].equalsIgnoreCase("C") || userInput[0].equalsIgnoreCase("Commands"))
+		{
+			commandList();
 		}
 		else if(userInput[0].equalsIgnoreCase("Look")){ // "Look ...", a series of commands (see below)			
 			if(gSubject instanceof CharacterObject)
@@ -527,7 +614,8 @@ public class Client {
 				gActor = (CharacterObject)gObject;
 			else
 				return "THERE IS NO HELP!!!";
-			System.out.println(gActor.location().description("Help"));
+			gActor.location().description("Help");
+			System.out.println(gActor.location()._description);
 		}
 		else 
 			System.out.println("Huh?");

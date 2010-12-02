@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<Map Name="Project.Lovecraft" Height="6" Width="11">
+<Room Name="A1">
+  <Character Name="You">
+   	<Command Verb="Go" />
+   	<Command Verb="Quit" />
+   	<Command Verb="Take" />
+   	<Command Verb="Drop" ></Command>
+   	<Command Verb="Look" ></Command>
+   	<Command Verb="Look" ></Command>
+   	<Command Verb="Help" ></Command>
+	<Command Verb="Grab"></Command>
+  	<Command Verb="I"></Command>
+  	<Command Verb="Inventory"></Command>
+  	<Command Verb="Map"></Command>
+  	<Command Verb="M"></Command>
+  	<Command Verb="Equip"></Command>
+  	<Command Verb="Attack"></Command>
+  	<Command Verb="Light"></Command>
+	<Command Verb="UnEquip"></Command>
+	<Command Verb="C"></Command>
+	<Command Verb="Commands"></Command>
+	<Command Verb="Command"></Command>
+  </Character>
+  <Description>You're in the original room... Why don't you have the torch? Well, it's too dark to see anything, smart move. </Description>
+ 	 <Description Status="lit">Welcome user, this is Project Love Craft... You have found yourself lying on theground, and it  appears you have a bump on the back of your head. As you look   around, it appears you are stuck in a dungeon or cave of some sort. Once you go forth into this dungeon, you will find objects, it is your choice how to handle them. You will have the ability to receive hints in certain areas; Your first   hint is that you must type 'go' and then the word North, West, East or South to move.</Description>
+ 	 <Description Status="Look">You look around the room with a dazed and confused look on your face... What is this place?</Description>
+ 	 <Description Status="Help">Have you grabbed the torch yet? (Type "take torch")</Description>
+	  <Description Status="Second">You have returned to the original room. There is nothing more to see here. </Description>
+	  <Exit Name="East" Destination="A2"> <Description Status="Lit">You may go East from here.</Description></Exit>
+	  <Exit Name="South" Destination="B1"><Description Status="Lit">You may also go South.</Description></Exit>
+	  <Item Name="Torch" Status="Light"> 
+	    <Description Status="Lit">There is a burning torch</Description>
+	    <Description Status="Look">The fire of the torch burns slightly greenish in color.</Description>
+	    <Command Verb="Take @Me"/>
+	    <Command Verb="Drop @Me"/>
+	    <Command Verb="Look at @Me"/>
+	    <Command Verb="Attack"/>
+	    <Command Verb="Attack @Monster"/>
+	    <Command Verb="Grab @Me"></Command>
+	    <Command Verb="Equip @Me"></Command>
+	    <Command Verb="UnEquip @Me"></Command>
+</Item>
+  <Command Verb="Go @Exit" />
+	<Command Verb="Look"></Command>
+</Room>
+<Room Name="A2">
+
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="lit">There is blood dripping from the ceiling... What is happening in this god awful place?</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="West" Destination="A1"> <Description Status="lit">There is a clear path leading West.</Description></Exit>
+  <Exit Name="East" Destination="A3"> <Description Status="lit">Another path leading East.</Description></Exit>
+  <Exit Name="South" Destination="B2"><Description Status="lit">As well as a path leading South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+  <Item Name="Stick">
+  	<Description>There appears to be an object sticking out of the wall.</Description><Description Status="Lit">There appears to be a lightable stick in the wall.</Description>
+  	<Description Status="Look">The stick is hand made... interesting.</Description>
+  	<Description Status="Fire">There is a burning Stick on the wall, illuminating the room.</Description>
+  	<Command Verb="Look at @Me" />
+  	<Command Verb="Light" />
+  	<Command Verb="Light @Me" />
+  </Item>
+</Room>
+<Room Name="A3">
+  <Exit Name="East" Destination="A4"><Description Status="lit">Along the wall is a path to the East.</Description></Exit>
+  <Exit Name="West" Destination="A2"><Description Status="lit">The wall also continues back to the West.</Description></Exit>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The walls are definitely whispering... </Description>
+  <Description Status="Second">You return to one of the rooms you've been in... There's nothing new here.</Description>
+  <Exit Name="South" Destination="B3"><Description Status="lit">Another path is leading to the South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="A4">
+  <Exit Name="West" Destination="A3"><Description Status="lit">There is a path leading back to the West.</Description></Exit>
+  <Exit Name="South" Destination="B4"><Description Status="lit">As well as a path leading to the South.</Description></Exit>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You seemed to have reached a corner. There are chains on the walls, and of course, blood dripping from the ceiling...</Description>
+  <Description Status="Second">Nothing new here. The chains are swaying back and forth.</Description>
+  <Command Verb="Go @Exit" />
+  <Item Name="Stick">
+  	<Description>There appears to be an object sticking out of the wall.</Description>
+	<Description Status="Lit">There appears to be a lightable stick in the wall.</Description>
+  	<Description Status="Look">The stick is hand made... interesting.</Description>
+  	<Description Status="Fire">There is a burning Stick on the wall, illuminating the room.</Description>
+  	<Command Verb="Look at @Me" />
+  	<Command Verb="Light" />
+  	<Command Verb="Light @Me" />
+  </Item>
+</Room>
+<Room Name="B1">
+  <Exit Name="North" Destination="A1"><Description Status="lit">There is a path leading North.</Description></Exit>
+  <Exit Name="East" Destination="B2"><Description Status="lit">There appears to be a path to the East as well.</Description></Exit>
+  <Exit Name="South" Destination="C1"><Description Status="lit">You may also go south.</Description></Exit>
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">Stange sigils cover the walls, you seem to be still delirious from the fall...</Description>
+  <Description Status="Look">After closer inspection, you can see that these Sigils are not from the world you know.</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... There is nothing new to see here. </Description>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="B2">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The absurdity of the surroundings baffles you... Don't be consumed by the voices.</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="North" Destination="A2"><Description Status="lit">There is a path leading to the North.</Description></Exit>
+  <Exit Name="West" Destination="B1"><Description Status="lit">Another path leading to the West.</Description></Exit>
+  <Exit Name="East" Destination="B3"><Description Status="lit">Another path leading to the East.</Description></Exit>
+  <Exit Name="South" Destination="C2"><Description Status="lit">As well as another path leading to the South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="B3">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is nothing here but a blood pool on the ground. How... uninteresting.</Description>
+  <Description Status="second">There is nothing new here. The blood pool is still on the ground though, as you swiftly remember after wiping the blood off your shoe.</Description>
+  <Exit Name="North" Destination="A3"><Description Status="lit">There is a path leading to the north.</Description></Exit>
+  <Exit Name="West" Destination="B2"><Description Status="lit">Another path which leads to the west.</Description></Exit>
+  <Exit Name="South" Destination="C3"><Description Status="lit">To the south appears to be streaks of the blood pool.</Description></Exit>
+  <Exit Name="East" Destination="B4"><Description Status="lit">The streaks also go to the east...</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="B4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">Lined on the walls is a thin coat of an unusual substance... What could it be?</Description>
+  <Description Status="second">The thin substance is still covering the walls....</Description>
+  <Exit Name="North" Destination="A4"><Description Status="lit">The wall leads to the north.</Description></Exit>
+  <Exit Name="West" Destination="B3"><Description Status="lit">A path leads to the west.</Description></Exit>
+  <Exit Name="South" Destination="C4"><Description Status="lit">The wall continues to the south.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="C1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You are at a wall, which seems to have a distinct smell  of moss and blood...</Description>
+  <Description Status="second">Nothing new in this area.</Description>
+  <Exit Name="North" Destination="B1"><Description Status="lit">You may continue the wall North.</Description></Exit>
+  <Exit Name="East" Destination="C2"><Description Status="lit">There appears to also be a path to the East.</Description></Exit>
+  <Exit Name="South" Destination="D1"><Description Status="lit">You may also continue the wall South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="C2">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You are really close to what appears to be a Chasm.... There are loud screams heard from it. Best not to go down there.</Description>
+  <Description Status="second">There is still the chasm, and nothing else of interest.</Description>
+  <Exit Name="North" Destination="B2"><Description Status="lit">There appears to be a path leading north</Description></Exit>
+  <Exit Name="West" Destination="C1"><Description Status="lit">You may go to the West which holds another path.</Description></Exit>
+  <Exit Name="East" Destination="C3"><Description Status="lit">You can also continue along the Chasm border to the East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="C3">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">There is a Chasm to the south that seems relatively eery... If you were to fall, it'd mean certain death.</Description>
+  <Description Status="second">The screams are ear-shattering... We shouldn't be down here.</Description>
+  <Exit Name="North" Destination="B3"><Description Status="lit">There is a path that leads to the North.</Description></Exit>
+  <Exit Name="West" Destination="C2"><Description Status="lit">The Chasm edge continues on to the West.</Description></Exit>
+  <Exit Name="East" Destination="C4"><Description Status="lit">You may also go East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="C4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">This part of the wall appears to have chains attached to it... I can see two arms in the chains... No body attached.</Description>
+  <Description Status="second">The chains are very creepy... Why'd you come back here?</Description>
+  <Exit Name="North" Destination="B4"><Description Status="lit">The wall leads north.</Description></Exit>
+  <Exit Name="South" Destination="D4"><Description Status="lit">The wall also leads to the South.</Description></Exit>
+  <Exit Name="West" Destination="C3"><Description Status="lit">There is also a path to the West.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="D1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The wall continues... There is also a Chasm to the East... This does not look promising. I'd advise staying near the wall.</Description>
+  <Description Status="second">Nothing new here... Except that little green man that looks like 'Lucky' from those Lucky Charms commercials... </Description>
+  <Exit Name="North" Destination="C1"><Description Status="lit">The wall continues North.</Description></Exit>
+  <Exit Name="South" Destination="E1"><Description Status="lit">And it also continues South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="D4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You are next to the wall hold on for dear life... One false move and you could fall to your death in the Chasm.</Description>
+  <Description Status="second">You're back on the edge... With nothing new to see...</Description>
+  <Command Verb="Go @Exit" />
+  <Exit Name="North" Destination="C4"><Description Status="lit">The wall extends North.</Description></Exit>
+  <Exit Name="South" Destination="E4"><Description Status="lit">And it also continues South.</Description></Exit>
+</Room>
+<Room Name="E1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You are attached to the wall like it is your savior... The path is narrow, and the Chasm is pitch black...</Description>
+  <Description Status="second">I don't see why you came back to this area... Steep path, and scary Chasm... Not very intelligent.</Description>
+  <Exit Name="North" Destination="D1"><Description Status="lit">The path leads north.</Description></Exit>
+  <Exit Name="South" Destination="F1"><Description Status="lit">And it also continues South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="E4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">Interesting... This appears to be a crossroad of some sort.</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="North" Destination="D4"><Description Status="lit">There is a path that leads North.</Description></Exit>
+  <Exit Name="East" Destination="E5"><Description Status="lit">You see a Path leading East as well.</Description></Exit>
+  <Exit Name="South" Destination="F4"><Description Status="lit">And, you also see a path that leads South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="F1">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You have reached a corner. There appears to be  hieroglyphs on the wall that are not decipherable and the words 'Don't listen to the voices'. I wonder what it could mean...</Description>
+  <Description Status="second">You enjoy corners? The hieroglyphs are still there, yes, nothing has changed.</Description>
+	<Item Name="Relic">
+	<Description>There appears to be something shiny on the floor... Oooh shiny.</Description>
+<Description Status="Lit">There appears to be a Relic of some kind on the floor...</Description>
+	<Description Status="Look">There is a fine engraving on this Relic... The words "You lost the game" are clearly visible.</Description>
+	<Command Verb="Take @Me"/>
+	<Command Verb="Look at @Me"/>
+	<Command Verb="Grab @Me"/>
+	</Item>
+  <Exit Name="North" Destination="E1"><Description Status="lit">You may go North.</Description></Exit>
+  <Exit Name="East" Destination="F2"><Description Status="lit">Or, you may follow the path to the East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="F2">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The Chasm is to your North... I feel a strong insecurity about this dungeon...</Description>
+  <Description Status="second">Still feel insecure... Don't know why you're back here.</Description>
+  <Exit Name="East" Destination="F3"><Description Status="lit">There is a path that leads to the East.</Description></Exit>
+  <Exit Name="West" Destination="F1"><Description Status="lit">There is also a path that leads to the West.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="F3">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The Chasm is to your North, and there are markings on the wall. As per usual, none of it makes any sense. Aren't you glad you're in this dungeon?</Description>
+  <Description Status="second">OoOoOoOoOoOo Scary noises!</Description>
+  <Exit Name="East" Destination="F4"><Description Status="lit">There is a path that leads to the East.</Description></Exit>
+  <Exit Name="West" Destination="F2"><Description Status="lit">There is also a path that leads to the West.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="F4">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You have reached a corner... how convenient. There is a noose hanging from the ceiling, but no one or thing is inside of it.</Description>
+  <Description Status="second">Coming back to look at the Noose some more?</Description>
+  <Exit Name="North" Destination="E4"><Description Status="lit">There is a path that leads to the North.</Description></Exit>
+  <Exit Name="West" Destination="F3"><Description Status="lit">As well as a path that leads to the West.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="E7">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">This hallway seems to go on forever... Maybe you will reach your escape? 
+You think to yourself... How did I get here... What was the motive... Where am I going?</Description>
+  <Description Status="second">You've returned to the room, but there is nothing new.</Description>
+  <Exit Name="West" Destination="E6"><Description Status="lit">There is a path that leads to the West.</Description></Exit>
+  <Exit Name="East" Destination="E8"><Description Status="lit">As well as a path to the East.</Description></Exit>
+  <Command Verb="Go @Exit" ></Command>
+</Room>
+<Room Name="Final">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You see a ladder and climb up it... It seems to be that you're at the beginning of a Cave looking out. There also seems to be a park, how convenient. You don't recognize any of your surroundings. Hell, you can't remember anything about yourself, let alone what you are, so there is no reason for any of your surroundings to be known. Though, you see someone coming. If you are to make your escape, you'll need to take out any eye witnesses. You bludgeon him in the back of the head with your wooden object and put him in the cave. Now you may make your escape. Type [Y]es to escape or type [N]o to return to the dungeon.</Description>
+  <Description Status="second">As you climb up the ladder again, you are peering out the Cave... Do you wish to make your escape? ([Y]es or [N]o)</Description>
+  <Exit Name="East" Destination="A6"/>
+  <Command Verb="Go @Exit" />
+<Description Status="final">Congratulations, You beat Project LoveCraft!
+
+Designed, Written, and Coded By:
+Michael Berg
+Nathan Secrist
+Zach Jetson
+Chris McDonald</Description>
+</Room>
+<Room Name="A6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The light, shining through. Your freedom is here. Heh... freedom... Such an unknown word.</Description>
+  <Description Status="second">Why didn't you make your escape? Well, feel free to roam the dungeon... But if you want to leave at any time, just come back here. Enjoy the stay.</Description>
+  <Exit Name="West" Destination="Final"><Description Status="lit">Your escape is just one small step to the West...</Description></Exit>
+  <Exit Name="East" Destination="A7"><Description Status="lit">Or you can follow the path back to the East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="A7">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The light... it is so close... The exit is within distance.
+You see a large wooden object on the ground and pick it up without thinking. This will not end well for the people in your path.</Description>
+  <Description Status="second">Yes, I understand the wooden object is not actually in your Inventory. That would require more coding that I don't wish to write right now.</Description>
+  <Exit Name="West" Destination="A6"><Description Status="lit">To the West the exit is so close...</Description></Exit>
+  <Exit Name="East" Destination="A8"><Description Status="lit">Or you can go back East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="A8">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The light around you is getting darker... But the light ahead of you appears to be getting brighter. The pain you're feeling means nothing, it is all in your head. Continue forth.</Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn--In his house at R'lyeh dead Cthulhu waits dreaming</Description>
+  <Exit Name="West" Destination="A7"><Description Status="lit">There is a distance... but the exit is there</Description></Exit>
+  <Exit Name="East" Destination="A9"><Description Status="lit">You can also head back East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="A9">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">The light around you has dimmed so much that you can't read anything on the walls...  I guess you'll have to trust your gut.
+
+Gut? How ironic. I don't even appear to have guts anymore, let alone 2 eyes. I have 6 now... None of this makes any sense.</Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn--In his house at R'lyeh dead Cthulhu waits dreaming</Description>
+  <Exit Name="West" Destination="A8"><Description Status="lit">There is a distinct light to the West.</Description></Exit>
+  <Exit Name="East" Destination="A10"><Description Status="lit">Or you may go back East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="A10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">Another corner... This time with more writing in Hieroglyphs 'You are now a soul to the master.' There is a light source to your West that is barely visible... A crack?
+
+How did I get here? What am I? Why does it appear that I am some sort of creature? I have... a wing... and what appears to be more deformities. Where am I going?</Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn--In his house at R'lyeh dead Cthulhu waits dreaming</Description>
+  <Exit Name="West" Destination="A9"><Description Status="lit">The light source is to your West</Description></Exit>
+  <Exit Name="South" Destination="B10"><Description Status="lit">You may also go South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="B10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">Continuation of the hallway with readable text now, though it doesn't seem to be in English. 'Enjoy this time, do not be afraid, I will help you.' That's unusual, but nonetheless, you may go North or South.</Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn--In his house at R'lyeh dead Cthulhu waits dreaming</Description>
+  <Exit Name="North" Destination="A10"><Description Status="lit">The hallway continues to the North.</Description></Exit>
+  <Exit Name="South" Destination="C10"><Description Status="lit">And it also goes back to the South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+  <Command Verb="Look @Exit"/>
+</Room>
+<Room Name="C10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">As you head North, there appears to be no end in sight... Where does this all lead? I don't get any of it...
+
+You think you might be hallucinating, but it is clear now that your arms have changed shape into some sort of... wing? No, this can't be possible...</Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn--In his house at R'lyeh... I don't understand the rest.</Description>
+  <Exit Name="North" Destination="B10"><Description Status="lit">You may continue North.</Description></Exit>
+  <Exit Name="South" Destination="D10"><Description Status="lit">Or you may go back South.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="D10">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">Another corner... How convenient. There are hieroglyphs on the wall... They seem very familiar, but you can't pin point it. Perhaps you can decipher them? </Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn--In his house... How do I know what this means?</Description>
+  <Exit Name="West" Destination="D9"><Description Status="lit">There is a path to the West which leads back.</Description></Exit>
+  <Exit Name="North" Destination="C10"><Description Status="lit">Or you may go North which leads forward.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="D9">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">This area is becoming darker, but your Torch is still lit... I wonder if this is actually the right way to go, or if we're falling into a trap.
+As you look down, you see yourself... but not how you remembered looking. Your body looks... deformed.</Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn--Why am I hearing this?</Description>
+  <Exit Name="East" Destination="D10"><Description Status="lit">You may continue East.</Description></Exit>
+  <Exit Name="West" Destination="D8"><Description Status="lit">Or you may go back West.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="E8">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">This is a corner... There are shackles on the wall (surprising!) and blood dripping from what appears to be every hole visible.
+You distinctly remember getting off work early to catch the Baseball game... Your girlfriend called and told you that she wanted you to bring home some groceries. You picked them up and decided to take the shortcut...</Description>
+  <Description Status="second">ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</Description>
+  <Exit Name="West" Destination="E7"><Description Status="lit">You may go back West.</Description></Exit>
+  <Exit Name="North" Destination="D8"><Description Status="lit">Or there is a path leading North.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="D8">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You have arrived at yet another corner. There appears to have been a struggle here... but not much more can be made out.
+You remember a faint whisper in your ear as you were walking through your short cut... You can't recall the words, but you know you heard something. As you approached where the voice came from, you lost memory and woke up here...</Description>
+  <Description Status="second">Enjoying the corner you've already been in?</Description>
+  <Exit Name="South" Destination="E8"><Description Status="lit">There is the path leading back South.</Description></Exit>
+  <Exit Name="East" Destination="D9"><Description Status="lit">And there is a better path leading East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="E6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="second">Still creepy scratch marks on the ground...</Description>
+  <Description Status="Lit">There appears to be scratch marks on the ground... Nothing out of the ordinary from what we've experienced so far...</Description>
+  <Exit Name="North" Destination="D6"><Description Status="lit">You see a Room to your North.</Description></Exit>
+  <Exit Name="West" Destination="E5"><Description Status="lit">You may take your path back West.</Description></Exit>
+  <Exit Name="South" Destination="F6"><Description Status="lit">There appears to be another Room to the South.</Description></Exit>
+  <Exit Name="East" Destination="E7"><Description Status="lit">As well as a path leading to the East.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="D6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">This room appears to have been used as a solitary confinement cell. The door was ripped off its hinges and you can see blood and scratches on the wall.</Description>
+  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER!!!!
+
+Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="South" Destination="E6"><Description Status="lit">You may only go South to exit.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="F6">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You have found yourself in one of the few torture chambers... Kinky, eh?
+	There is nothing of any use in this room.</Description>
+  <Description Status="second">Well, like shackles? Into Bondage? This is the room for you.</Description>
+  <Exit Name="North" Destination="E6"><Description Status="lit">You may only go North to get out.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+<Room Name="E5">
+  <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
+  <Description Status="Lit">You have appeared to enter a long hallway... Joy.</Description>
+  <Description Status="second">The room where the voluptuous Shoggoth reigned supreme... Feel proud you defeated this beast.</Description>
+   <Monster Name="Shoggoth">
+    <Description>You hear a buggling sound as something squishes across the unlit room</Description>
+    <Description Status="Lit">There is a bubbling mass of tissue with hundred of eyes and tentacles shambling through the room.  It seems to notice you</Description> 
+    <Description Status="Dead">The bubbling mass of tissue lays slumpt on the ground with the tentacles limp and the eyes devoid of life.</Description>
+    <Description Status="Dead,Dark">The smell of something foul and unholy fills this area.</Description>
+    <Description Status="Attacking">The thing lumbers towards you and you are engulfed in the tissue.  A crushing feeling passes quickly as you know no more.</Description>
+  </Monster>
+  <Exit Name="West" Destination="E4"><Description Status="lit">There is a path leading to the East</Description></Exit>
+  <Exit Name="East" Destination="E6"><Description Status="lit">As well as a path leading back West.</Description></Exit>
+  <Command Verb="Go @Exit" />
+</Room>
+</Map>

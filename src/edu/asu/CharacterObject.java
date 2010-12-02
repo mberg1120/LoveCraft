@@ -43,6 +43,8 @@ public class CharacterObject extends CreatureObject {
 			else
 				return "I don't understand \"" + input + "\".";
 		}
+		if(_Cut[1].equalsIgnoreCase("at"))
+			_Cut[1] = _Cut[2];
 		if(CharacterObject.you.inventory().size() > 0)
 		{
 			verb = null;

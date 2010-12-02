@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Map Name="Project.Lovecraft" Height="6" Width="11">
+<Room Name="Room name. Since this is the first room, you'd want to name it wherever the user is being placed. (Does not necessarily have to be the top left corner).">
+  <Character Name="Name of your Character">
+	(The below command verbs are what is to be used in conjuction with items and the player him/herself. You can remove verbs, but you cannot add verbs. Newly added verbs will be fine, but the code will not recognize it if you type it. To add new verbs, you'd need to add a section in the code that explains what it does (In the method doVerb).
+   	<Command Verb="Go" />
+   	<Command Verb="Quit" />
+   	<Command Verb="Take" />
+   	<Command Verb="Drop" ></Command>
+   	<Command Verb="Look" ></Command>
+   	<Command Verb="Look" ></Command>
+   	<Command Verb="Help" ></Command>
+	<Command Verb="Grab"></Command>
+  	<Command Verb="I"></Command>
+  	<Command Verb="Inventory"></Command>
+  	<Command Verb="Map"></Command>
+  	<Command Verb="M"></Command>
+  	<Command Verb="Equip"></Command>
+  	<Command Verb="Attack"></Command>
+  	<Command Verb="Light"></Command>
+	<Command Verb="UnEquip"></Command>
+	<Command Verb="C"></Command>
+	<Command Verb="Commands"></Command>
+	<Command Verb="Command"></Command>
+  </Character>
+  <Description>Description to be read when there is no light source!</Description>
+ 	 <Description Status="lit">This is the description that is read when there is light.</Description>
+ 	 <Description Status="Look">You look around the room with a dazed and confused look on your face... What is this place?</Description>
+ 	 <Description Status="Help">Information printed when the user types "HelP"</Description>
+	  <Description Status="Second">If there is light, this will be the second description (coming back into the room)</Description>
+	  <Exit Name="East" Destination="Name of the room you placed to the east of this one"> <Description Status="Lit">Information that will be given if your current room is lit.</Description></Exit>
+	  <Exit Name="South" Destination="Name of room that is south of this one"><Description Status="Lit">There can be way more than one exit..</Description></Exit>
+	  <Item Name="Torch(Name of the item)" Status="Light(indicates that it is a light source)"> 
+	    <Description Status="Lit">What the user will see when he/she walks into  the room and sees it on the ground.</Description>
+	    <Description Status="Look">Information that will be given to the user when they type "Look at -Item Name-"</Description>
+	    <Command Verb="Take @Me"/>(These are the command verbs that are used in conjuction with the User's command verbs. You can remove verbs and add verbs, but only on the same list that the user has. These are all the verbs that any 1 item can have... If you wish to add more unique ones, you'd need to edit the code--which I suggest not doing.)
+	    <Command Verb="Drop @Me"/>
+	    <Command Verb="Look at @Me"/>
+	    <Command Verb="Attack"/>
+	    <Command Verb="Attack @Monster"/>
+	    <Command Verb="Grab @Me"></Command>
+	    <Command Verb="Equip @Me"></Command>
+	    <Command Verb="UnEquip @Me"></Command>
+</Item>
+   <Monster Name="Name of the Monster">
+    <Description>Monster's description if you can't see it (no light source).</Description>
+    <Description Status="Lit">Scary description of the monster in the light.</Description> 
+    <Description Status="Dead">Information given if the monster is dead in the light.</Description>
+    <Description Status="Dead,Dark">Nasty description for when you can't see it.</Description>
+    <Description Status="Attacking">Description when you fail at attack monster and it attacks and kills you.</Description>
+  </Monster>
+	(These command verbs are what is usable in the room itself. Currently, I only have 2, but there could be more added, in the future--Look at @Exit, Run @Exit, Use @Item, etc...)
+	<Command Verb="Go @Exit" />
+	<Command Verb="Look"></Command>
+</Room>
+
+--Below is a description on how to make the last room of your dungeon--
+
+<Room Name="Final"> (Name the room Final)
+  <Description></Description>(You do not need a dark description, the code will not allow you to leave with no light source.
+  <Description Status="Lit">Information you'd give to the user about how he/she is about to escape... Then say: Type [Y]es to escape or type [N]o to return to the dungeon. (This is necessary as the user will need to type one of those two things in order to leave. It will also promptly tell the user "You must type [Y]es or [N]o"</Description>
+  <Description Status="second">This is the information given if the user left the last area, and decided to return: Do you wish to make your escape? ([Y]es or [N]o)</Description>
+  <Exit Name="East" Destination="A6"/>
+  <Command Verb="Go @Exit" />
+<Description Status="final">The final hoorah. Information about who coded it, special thanks, etc... This is the last description of the game. The music will cut off at this point, and all will be well.</Description>
+</Room>
+</Map>

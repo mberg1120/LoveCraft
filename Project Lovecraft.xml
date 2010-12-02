@@ -16,23 +16,18 @@
   	<Command Verb="Equip"></Command>
   	<Command Verb="Attack"></Command>
   	<Command Verb="Light"></Command>
-	<Command verb="UnEquip"></Command>
+	<Command Verb="UnEquip"></Command>
+	<Command Verb="C"></Command>
+	<Command Verb="Commands"></Command>
+	<Command Verb="Command"></Command>
   </Character>
   <Description>You're in the original room... Why don't you have the torch? Well, it's too dark to see anything, smart move. </Description>
- 	 <Description Status="lit">Welcome user, this is Project Love Craft... You have found yourself lying on the ground, 
-and it  appears you have a bump on the back of your head. As you look around, you only have 3
-areas that are visible, and it appears you are stuck in a dungeon or cave of some sort. Once you go forth 
-into this dungeon, you will find objects, it is your choice how to handle them. You will have the ability to 
-receive hints in certain areas; Your first hint is that you must type 'go' and then the word North, West, East or South to move.</Description>
- 	 <Description Status="Look">Upon further inspection the blood appears to be the wrong color and texture for a human</Description>
+ 	 <Description Status="lit">Welcome user, this is Project Love Craft... You have found yourself lying on the ground, and it  appears you have a bump on the back of your head. As you look around, you only have 3 areas that are visible, and it appears you are stuck in a dungeon or cave of some sort. Once you go forth into this dungeon, you will find objects, it is your choice how to handle them. You will have the ability to receive hints in certain areas; Your first hint is that you must type 'go' and then the word North, West, East or South to move.</Description>
+ 	 <Description Status="Look">You look around the room with a dazed and confused look on your face... What is this place?</Description>
  	 <Description Status="Help">Have you grabbed the torch yet? (Type "take torch")</Description>
 	  <Description Status="Second">You have returned to the original room. There is nothing more to see here. </Description>
-	  <Exit Name="East" Destination="A2"> 
-	    <Description Status="Lit">There is a stone archway leading east</Description>
-	  </Exit>
-	  <Exit Name="South" Destination="B1">
-	    <Description Status="Lit">The courtyard opens to the South</Description>
-	  </Exit>
+	  <Exit Name="East" Destination="A2"> <Description Status="Lit">You may go East from here.</Description></Exit>
+	  <Exit Name="South" Destination="B1"><Description Status="Lit">You may also go South.</Description></Exit>
 	  <Item Name="Torch" Status="Light"> 
 	    <Description Status="Lit">There is a burning torch</Description>
 	    <Description Status="Look">The fire of the torch burns slightly greenish in color.</Description>
@@ -44,15 +39,9 @@ receive hints in certain areas; Your first hint is that you must type 'go' and t
 	    <Command Verb="Grab @Me"></Command>
 	    <Command Verb="Equip @Me"></Command>
 	    <Command Verb="UnEquip @Me"></Command>
-	  </Item>
-	  <Item Name="Key" Status="UnLock">
-  	<Description>There is a Key on the ground.</Description>
-	<Command Verb="Take @Me"></Command>
-    	<Command Verb="Drop @Me"></Command>
-    	<Command Verb="Grab @Me"></Command>
-	  </Item>
-  <Command Verb="Go @Exit" /><Command Verb="Look"></Command>
-	
+</Item>
+  <Command Verb="Go @Exit" />
+	<Command Verb="Look"></Command>
 </Room>
 <Room Name="A2">
 
@@ -60,11 +49,10 @@ receive hints in certain areas; Your first hint is that you must type 'go' and t
   <Description Status="lit">There is blood dripping from the ceiling... What is happening in this god awful place?</Description>
   <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
 Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
-  <Exit Name="West" Destination="A1"/>
-  <Exit Name="East" Destination="A3"/>
-  <Exit Name="South" Destination="B2"/>
+  <Exit Name="West" Destination="A1"> <Description Status="lit">There is a clear path leading West.</Description></Exit>
+  <Exit Name="East" Destination="A3"> <Description Status="lit">Another path leading East.</Description></Exit>
+  <Exit Name="South" Destination="B2"><Description Status="lit">As well as a path leading South.</Description></Exit>
   <Command Verb="Go @Exit" />
-
   <Item Name="Stick">
   	<Description>There appears to be an object sticking out of the wall.</Description><Description Status="Lit">There appears to be a lightable stick in the wall.</Description>
   	<Description Status="Look">The stick is hand made... interesting.</Description>
@@ -72,16 +60,14 @@ Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary
   	<Command Verb="Look at @Me" />
   	<Command Verb="Light" />
   	<Command Verb="Light @Me" />
-
   </Item>
 </Room>
 <Room Name="A3">
   <Exit Name="East" Destination="A4"></Exit>
   <Exit Name="West" Destination="A2"/>
   <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
-  <Description Status="Lit">There is a burning torch</Description>
-  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
-Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Description Status="Lit">The walls are definitely whispering... </Description>
+  <Description Status="Second">You return to one of the rooms you've been in... There's nothing new here.</Description>
   <Exit Name="South" Destination="B3"/>
   <Command Verb="Go @Exit" />
 </Room>
@@ -89,30 +75,38 @@ Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary
   <Exit Name="West" Destination="A3"/>
   <Exit Name="South" Destination="B4"/>
   <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
-  <Description Status="Lit">This chamber has nothing of interest.</Description>
-  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
-Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Description Status="Lit">You seemed to have reached a corner. There are chains on the walls, and of course, blood dripping from the ceiling...</Description>
+  <Description Status="Second">Nothing new here. The chains are swaying back and forth.</Description>
   <Command Verb="Go @Exit" />
+  <Item Name="Stick">
+  	<Description>There appears to be an object sticking out of the wall.</Description>
+	<Description Status="Lit">There appears to be a lightable stick in the wall.</Description>
+  	<Description Status="Look">The stick is hand made... interesting.</Description>
+  	<Description Status="Fire">There is a burning Stick on the wall, illuminating the room.</Description>
+  	<Command Verb="Look at @Me" />
+  	<Command Verb="Light" />
+  	<Command Verb="Light @Me" />
+  </Item>
 </Room>
 <Room Name="B1">
-  <Exit Name="North" Destination="A1"/>
-  <Exit Name="East" Destination="B2"/>
-  <Exit Name="South" Destination="C1"/>
+  <Exit Name="North" Destination="A1"><Description Status="lit">There is a path leading North.</Description></Exit>
+  <Exit Name="East" Destination="B2"><Description Status="lit">There appears to be a path to the East as well.</Description></Exit>
+  <Exit Name="South" Destination="C1"><Description Status="lit">You may also go south.</Description></Exit>
   <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
-  <Description Status="Lit">This is room $B2.  Stange sigils cover the walls</Description>
-  <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
-Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Description Status="Lit">Stange sigils cover the walls, you seem to be still delirious from the fall...</Description>
+  <Description Status="Look">After closer inspection, you can see that these Sigils are not from the world you know.</Description>
+  <Description Status="Second">You return to one of the rooms you've been in... There is nothing new to see here. </Description>
   <Command Verb="Go @Exit" />
 </Room>
 <Room Name="B2">
-  <Exit Name="North" Destination="A2"/>
-  <Exit Name="West" Destination="B1"/>
-  <Exit Name="East" Destination="B3"/>
-  <Exit Name="South" Destination="C2"/>
   <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
-  <Description Status="lit"> Well, this room is lit and I am dumb for not noticing. </Description>
+  <Description Status="Lit">For some reason, this description isn't being read... What? Why...</Description>
   <Description Status="Second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
 Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Exit Name="North" Destination="A2"><Description Status="lit">There is a path leading to the North.</Description></Exit>
+  <Exit Name="West" Destination="B1"><Description Status="lit">Another path leading to the West.</Description></Exit>
+  <Exit Name="East" Destination="B3"><Description Status="lit">Another path leading to the East.</Description></Exit>
+  <Exit Name="South" Destination="C2"><Description Status="lit">As well as another path leading to the South.</Description></Exit>
   <Command Verb="Go @Exit" />
 </Room>
 <Room Name="B3">
@@ -260,11 +254,17 @@ Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary
 </Room>
 <Room Name="Final">
   <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
-  <Description Status="Lit">There is a burning torch</Description>
-  <Description Status="second">You return to one of the rooms you've been in... Why? There's nothing new in here... EXCEPT THAT SPIDER OH GOD!
-Nevermind, it's just the blood dripping from the ceiling. Oh man, that was scary.</Description>
+  <Description Status="Lit">You climb up a ladder... It seems to be that you're at the beginning of a Cave looking out. There also seems to be a park, how convenient. You don't recognize any of your surroundings. Hell, you can't remember anything about yourself, let alone what you are, so there is no reason for any of your surroundings to be known. Though, you see someone coming. If you are to make your escape, you'll need to take out any eye witnesses. You bludgeon him in the back of the head with your wooden object and put him in the cave. Now you may make your escape. Type [Y]es to escape or type [N]o to return to the dungeon.</Description>
+  <Description Status="second">As you climb up the ladder again, you are peering out the Cave... Do you wish to make your escape? ([Y]es or [N]o)</Description>
   <Exit Name="East" Destination="A6"/>
   <Command Verb="Go @Exit" />
+<Description Status="final">Congratulations, You beat Project LoveCraft!
+
+Designed, Written, and Coded By:
+Michael Berg
+Nathan Secrist
+Zach Jetson
+Chris McDonald</Description>
 </Room>
 <Room Name="A6">
   <Description>The room reeks... You can't see anything... I'd suggest getting a light source.</Description>
